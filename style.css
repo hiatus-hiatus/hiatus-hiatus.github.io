@@ -1,0 +1,255 @@
+body {
+    overflow-y: scroll;
+    padding-top: 15px;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}
+
+.bar {
+    border-radius: 4px;
+    padding-top: 40px;
+    background-color: #CC0000;
+    margin-bottom: 10px;
+}
+
+.bar.left {
+    float: left;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.bar.right {
+    float: left;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.bar.blue {
+    background-color: #33B5E5;
+}
+
+.bar.dark-blue {
+    background-color: #0099CC;
+}
+
+._container {
+    transition: 1.5s ease-in-out all;
+    min-width: 1250px;
+    overflow: hidden;
+}
+
+.h-row {
+    margin-bottom: 1px;
+    width: 100%;
+    height: 18px;
+    max-height: 18px;
+    cursor: default;
+}
+
+.h-col {
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;
+    height: 16px;
+    width: 21px;
+    display: inline-block;
+    margin-left: 2px;
+    background-color: #33B5E5;
+}
+
+.chart-year {
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+.h-row:hover .h-col {
+    background-color: #0099CC;
+}
+
+.h-row:hover .false {
+    background-color: #CC0000;
+}
+
+.false {
+    background-color: #FF4444;
+}
+
+.card-content {
+    vertical-align: middle;
+}
+
+.chart {
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.inner {
+    max-height: 0;
+
+}
+
+.inner .fab {
+    display: none;
+}
+
+.defrag {
+    background-color: #9C27B0;
+    margin-right: 4px;
+}
+
+.inner div {
+    visibility: hidden;
+}
+
+#status {
+    margin-bottom: 40px;
+}
+
+.chart div .h-row:last-child .h-col:nth-child(2) {
+    margin-left: 255px;
+}
+
+.table th, table td {
+    cursor: default;
+    text-align: center;
+}
+
+.table-bar {
+    background-color: #FF4444 !important;
+    color: white;
+}
+
+.fab {
+    display: block;
+    float: right;
+    top: 10px;
+    right: 10px;
+
+    transition: 400ms;
+    border-radius: 50%;
+    padding: 20px;
+    border: none;
+    background-color: #3F51B5;
+    color: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .23);
+
+}
+
+.fab:hover {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .19), 0 6px 3px 0 rgba(0, 0, 0, .23);
+}
+
+.fab:active {
+    background-color: #4b62dd;
+
+}
+
+.hiatus-arc {
+    background-color: #E0E0E0;
+}
+
+.h-row:hover .hiatus-arc {
+    background-color: #cacaca !important;
+}
+
+.hunter-exam {
+    background-color: #3F51B5;
+}
+
+.h-row:hover .hunter-exam {
+    background-color: #1A237E;
+}
+
+.zoldyck {
+    background-color: #009688;
+}
+
+.h-row:hover .zoldyck {
+    background-color: #004D40;
+}
+
+.heavens-arena {
+    background-color: #FFC107;
+}
+
+.h-row:hover .heavens-arena {
+    background-color: #FF6F00;
+}
+
+.heavens-arena {
+    background-color: #FFC107;
+}
+
+.h-row:hover .heavens-arena {
+    background-color: #FF6F00;
+}
+
+.yorknew {
+    background-color: #4CAF50;
+}
+
+.h-row:hover .yorknew {
+    background-color: #43A047;
+}
+
+.greed-island {
+    background-color: #FF5722;
+}
+
+.h-row:hover .greed-island {
+    background-color: #F4511E;
+}
+
+.chimera-ant {
+    background-color: #9C27B0;
+}
+
+.h-row:hover .chimera-ant {
+    background-color: #7B1FA2;
+}
+
+.election {
+    background-color: #E91E63;
+}
+
+.h-row:hover .election {
+    background-color: #C2185B;
+}
+
+.dc {
+    background-color: #607D8B;
+}
+
+.h-row:hover .dc {
+    background-color: #546E7A;
+}
+
+.oneshot {
+    background-color: #F44336;
+}
+
+.h-row:hover .oneshot {
+    background-color: #B71C1C;
+}
+
+.notransition .h-row:hover .h-col {
+    transition: none;
+}
+
+.notransition .h-row .h-col {
+    transition: none;
+}
+
+.h-row:hover .false {
+    background-color: #CC0000;
+}
+
+
