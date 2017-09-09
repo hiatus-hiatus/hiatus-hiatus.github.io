@@ -86,7 +86,7 @@ var app = new Vue({
             }
         },
         mounted: function () {
-            const that = this;
+            var that = this;
             axios.get("issues.json")
                 .then(function (response) {
                     that.all_issues = response.data;
