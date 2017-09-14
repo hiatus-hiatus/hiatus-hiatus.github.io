@@ -1,0 +1,47 @@
+{
+  "series_name": "HUNTER×HUNTER",
+  "ongoing": true,
+  "major_hiatus_threshold": 4,
+  "arcs": [
+    {
+      "key": "hiatus-arc",
+      "name": "Great Hiatus Arc"
+    },
+    {
+      "key": "hunter-exam",
+      "name": "Hunter Exam"
+    },
+    {
+      "key": "zoldyck",
+      "name": "Zoldyck Family"
+    },
+    {
+      "key": "heavens-arena",
+      "name": "Heavens Arena"
+    },
+    {
+      "key": "yorknew",
+      "name": "Yorknew City"
+    },
+    {
+      "key": "greed-island",
+      "name": "Greed Island"
+    },
+    {
+      "key": "chimera-ant",
+      "name": "Chimera Ant"
+    },
+    {
+      "key": "election",
+      "name": "13th Hunter Chairman Election"
+    },
+    {
+      "key": "dc",
+      "name": "Dark Continent Expedition"
+    },
+    {
+      "key": "oneshot",
+      "name": "Kurapika's One Shot"
+    }
+  ]
+}
