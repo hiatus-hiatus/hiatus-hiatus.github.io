@@ -1,0 +1,27 @@
+{
+  "series_name": "Yu Yu Hakusho",
+  "ongoing": false,
+  "major_hiatus_threshold": 1,
+  "arcs": [
+    {
+      "key": "hiatus-arc",
+      "name": "Hiatus"
+    },
+    {
+      "key": "spirit-detective",
+      "name": "Spirit Detective Saga"
+    },
+    {
+      "key": "dark-tournament",
+      "name": "Dark Tournament Saga"
+    },
+    {
+      "key": "chapter-black",
+      "name": "Chapter Black Saga"
+    },
+    {
+      "key": "kings",
+      "name": "Three Kings Saga"
+    }
+  ]
+}

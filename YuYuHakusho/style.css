@@ -1,0 +1,44 @@
+.hiatus-arc {
+    background-color: #E0E0E0;
+}
+
+.h-row:hover .hiatus-arc {
+    background-color: #cacaca !important;
+}
+
+.spirit-detective {
+    background-color: #3F51B5;
+}
+
+.h-row:hover .spirit-detective {
+    background-color: #1A237E;
+}
+
+.chapter-black {
+    background-color: #009688;
+}
+
+.h-row:hover .chapter-black {
+    background-color: #004D40;
+}
+
+.dark-tournament {
+    background-color: #FFC107;
+}
+
+.h-row:hover .dark-tournament {
+    background-color: #FF6F00;
+}
+
+.kings {
+    background-color: #9C27B0;
+}
+
+.h-row:hover .kings {
+    background-color: #7B1FA2;
+}
+
+/*add a margin to the last row*/
+.chart div .h-row:last-child .h-col:nth-child(2) {
+    margin-left: 1037px;
+}
