@@ -3,6 +3,7 @@ var BASE_NAME = "/" + window.location.pathname.split('/')[1];
 
 if (BASE_NAME === "/" || BASE_NAME === "/index.html") {
     BASE_NAME = "/HunterXHunter";
+    document.getElementById("custom_style").href = BASE_NAME + "/style.css";
 }
 
 var INFO_PATH = BASE_NAME + "/info.json";
@@ -247,6 +248,23 @@ var app = new Vue({
                     })
                 ;
             });
+
+            window.disqus_config = function () {
+                if (BASE_NAME === "/HunterXHunter") {
+                    this.page.url = "https://hiatus-hiatus.rhcloud.com/";
+                }
+                else {
+                    this.page.url = "https://hiatus-hiatus.rhcloud.com/" + BASE_NAME;
+                }
+            };
+            (function () {
+                var d = document, s = d.createElement('script');
+
+                s.src = '//hiatus-hiatus.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
 
 
         },
