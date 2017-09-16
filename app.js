@@ -254,7 +254,7 @@ var app = new Vue({
                     this.page.url = "https://hiatus-hiatus.rhcloud.com/";
                 }
                 else {
-                    this.page.url = "https://hiatus-hiatus.rhcloud.com/" + BASE_NAME;
+                    this.page.url = "https://hiatus-hiatus.github.io" + BASE_NAME;
                 }
             };
             (function () {
