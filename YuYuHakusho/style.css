@@ -31,11 +31,11 @@
 }
 
 .kings {
-    background-color: #9C27B0;
+    background-color: #E91E63;
 }
 
 .h-row:hover .kings {
-    background-color: #7B1FA2;
+    background-color: #C2185B;
 }
 
 /*add a margin to the last row*/
