@@ -68,6 +68,7 @@ body {
     vertical-align: top;
     margin-right: 4px;
     font-size: 12px;
+    width: 25px;
 }
 
 .h-row:hover .h-col {
