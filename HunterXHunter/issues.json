@@ -1,5 +1,10 @@
 [
   {
+    "number": 2,
+    "year": 2018,
+    "released": false
+  },
+  {
     "number": 1,
     "year": 2018,
     "released": false
