@@ -165,3 +165,25 @@ body {
     max-width: 50%;
     display: inline-block;
 }
+
+.buttons {
+    display: flex;
+}
+
+a.chart-button {
+    background-color: #3F51B5;
+    color: white;
+    margin-right: 8px;
+    text-decoration: none;
+    border: solid 1px;
+    padding: 20px 0px !important;
+    border-radius: 4px;
+    width: 180px;
+    text-align: center;
+}
+
+a.chart-button:hover {
+    border-color: #303d81;
+    background-color: #303d81;
+    color: white;
+}
