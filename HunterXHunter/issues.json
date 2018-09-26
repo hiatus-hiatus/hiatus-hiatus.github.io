@@ -1,5 +1,21 @@
 [
   {
+    "number": 43,
+    "year": 2018,
+    "released": true,
+    "arc": "dc"
+  },
+  {
+    "number": 42,
+    "year": 2018,
+    "released": false
+  },
+  {
+    "number": 41,
+    "year": 2018,
+    "released": false
+  },
+  {
     "number": 40,
     "year": 2018,
     "released": false
