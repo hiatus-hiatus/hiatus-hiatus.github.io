@@ -1,5 +1,40 @@
 [
   {
+    "number": 10,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 9,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 8,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 6,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 4,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 3,
+    "year": 2019,
+    "released": false
+  },
+  {
+    "number": 2,
+    "year": 2019,
+    "released": false
+  },
+  {
     "number": 1,
     "year": 2019,
     "released": false
@@ -63,11 +98,6 @@
     "year": 2018,
     "released": true,
     "arc": "dc"
-  },
-  {
-    "number": 42,
-    "year": 2018,
-    "released": false
   },
   {
     "number": 42,
