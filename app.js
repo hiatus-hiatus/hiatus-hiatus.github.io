@@ -240,8 +240,7 @@ var app = new Vue({
                         for (var i = 0; i < hiatuses.length; i++) {
                             hiatuses[i].viewProportion = (hiatuses[i].total / greatest / 0.01) + "%";
                         }
-
-                        that.status.major_hiatuses = hiatuses;
+                        that.major_hiatuses = hiatuses;
 
                         that.initGraph(that.$refs.yearlyCanvas, 'line')
 
