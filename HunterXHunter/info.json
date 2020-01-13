@@ -38,7 +38,11 @@
     {
       "key": "dc",
       "name": "Dark Continent Expedition"
+    },  {
+      "key": "succ-war",
+      "name": "Succession Contest"
     },
+
     {
       "key": "oneshot",
       "name": "Kurapika's One Shot"
