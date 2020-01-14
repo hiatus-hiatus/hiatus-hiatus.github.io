@@ -78,6 +78,14 @@
     background-color: #B71C1C;
 }
 
+.succ-war {
+    background-color: #cddc39;
+}
+
+.h-row:hover .succ-war {
+    background-color: #b5c434;
+}
+
 /*add a margin to the last row*/
 .chart div .h-row:last-child .h-col:nth-child(2) {
     margin-left: 255px;
