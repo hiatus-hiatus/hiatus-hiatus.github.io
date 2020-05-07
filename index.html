@@ -17,7 +17,21 @@
           href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css"/>
     <title>Hiatus Chart</title>
 
+    <style type="text/css">
 
+        .nice:hover:after {
+            display: block;
+            content: " ";
+            visibility: visible;
+            width: 300px;
+            height: 160px;
+            background: url("https://i.redd.it/zdpaevoo9bx41.jpg");
+            background-size: cover;
+            position: absolute;
+        }
+
+    </style>
+</head>
 <body>
 <div id="app">
 
@@ -65,7 +79,7 @@
 
                 <div v-if="status.current.hiatusCount>0 && info.ongoing">
                     <p>Current hiatus:
-                        <span v-if="status.current.hiatusCount>0">
+                        <span v-if="status.current.hiatusCount>0" :class="{'nice':status.current.hiatusCount===69}">
                     <strong>{{status.current.hiatusCount}}</strong> issue<span
                                 v-if="status.current.hiatusCount>1">s</span>
                 (since issue {{status.current.begin.issue}}/{{status.current.begin.year}})
