@@ -39,19 +39,30 @@ var app = new Vue({
                     totalHiatus: 0
                 }
             },
+            defrag: false,
             show_arcs: false,
             info: {},
             major_hiatuses: []
         },
         computed: {
             issues_by_year: function () {
+                var defrag = this.defrag
                 var data = [];
                 var t = _.groupBy(this.all_issues, 'year');
                 Object.keys(t)
                     .sort()
                     .reverse()
                     .forEach(function (key) {
-                        data.push({year: key, issues: _.sortBy(t[key], ['number'])})
+                        data.push({
+                          year: key,
+                          issues: _.sortBy(t[key], (issue) => {
+                            if (defrag) {
+                              return issue.number + (issue.released ? 0 : 60);
+                            } else {
+                              return issue.number;
+                            }
+                          }),
+                        });
                     });
                 return data;
             },
