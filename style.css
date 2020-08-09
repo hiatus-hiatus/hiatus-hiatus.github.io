@@ -187,3 +187,7 @@ a.chart-button:hover {
     background-color: #303d81;
     color: white;
 }
+
+[v-cloak] {
+  display: none;
+}

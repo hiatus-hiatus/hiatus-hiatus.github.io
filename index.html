@@ -25,7 +25,7 @@
     <div class="well container _container">
         <div v-konami="displayDefrag"></div>
         <button v-on:click="show_arcs = !show_arcs" class="fab">Arcs</button>
-        <button v-if="show_defrag" v-on:click="defrag = !defrag" class="fab">Defrag</button>
+        <button v-if="show_defrag" v-on:click="defrag = !defrag" class="fab" v-cloak>Defrag</button>
 
         <h1 class="text-center">{{info.series_name}} Hiatus Chart</h1>
 
