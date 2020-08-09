@@ -39,19 +39,26 @@ var app = new Vue({
                     totalHiatus: 0
                 }
             },
+            show_defrag: false,
+            defrag: false,
             show_arcs: false,
             info: {},
             major_hiatuses: []
         },
         computed: {
             issues_by_year: function () {
+                var defrag = this.defrag
                 var data = [];
                 var t = _.groupBy(this.all_issues, 'year');
                 Object.keys(t)
                     .sort()
                     .reverse()
                     .forEach(function (key) {
-                        data.push({year: key, issues: _.sortBy(t[key], ['number'])})
+                        if (defrag) {
+                            data.push({ year: key, issues: _.orderBy(t[key], ["released", "number"], ["desc", "asc"]) });
+                        } else {
+                            data.push({ year: key, issues: _.orderBy(t[key], ["number"], ["asc"]) });
+                        }
                     });
                 return data;
             },
@@ -268,6 +275,11 @@ var app = new Vue({
 
         },
         methods: {
+
+            displayDefrag: function() {
+                this.show_defrag = !this.show_defrag
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            },
 
             initGraph: function (canvas, type) {
                 var mapToYear = function (info) {
