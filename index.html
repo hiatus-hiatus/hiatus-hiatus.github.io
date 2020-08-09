@@ -23,7 +23,7 @@
 
 
     <div class="well container _container">
-        <div v-konami @konami="show_defrag = !show_defrag"></div>
+        <div v-konami="displayDefrag"></div>
         <button v-on:click="show_arcs = !show_arcs" class="fab">Arcs</button>
         <button v-if="show_defrag" v-on:click="defrag = !defrag" class="fab">Defrag</button>
 
@@ -252,7 +252,7 @@
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-<script src="https://unpkg.com/vue-konami"></script>
+<script src="https://unpkg.com/vue-konami@1.0.10/dist/vue-konami.umd.js"></script>
 <script src="/app.js"></script>
 
 <script>

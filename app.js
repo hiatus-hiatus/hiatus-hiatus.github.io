@@ -54,16 +54,11 @@ var app = new Vue({
                     .sort()
                     .reverse()
                     .forEach(function (key) {
-                        data.push({
-                          year: key,
-                          issues: _.sortBy(t[key], (issue) => {
-                            if (defrag) {
-                              return issue.number + (issue.released ? 0 : 60);
-                            } else {
-                              return issue.number;
-                            }
-                          }),
-                        });
+                        if (defrag) {
+                            data.push({ year: key, issues: _.orderBy(t[key], ["released", "number"], ["desc", "asc"]) });
+                        } else {
+                            data.push({ year: key, issues: _.orderBy(t[key], ["number"], ["asc"]) });
+                        }
                     });
                 return data;
             },
@@ -280,6 +275,11 @@ var app = new Vue({
 
         },
         methods: {
+
+            displayDefrag: function() {
+                this.show_defrag = !this.show_defrag
+                window.scrollTo(0,0);
+            },
 
             initGraph: function (canvas, type) {
                 var mapToYear = function (info) {
