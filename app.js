@@ -39,6 +39,7 @@ var app = new Vue({
                     totalHiatus: 0
                 }
             },
+            show_defrag: false,
             defrag: false,
             show_arcs: false,
             info: {},
