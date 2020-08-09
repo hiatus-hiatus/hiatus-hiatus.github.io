@@ -278,7 +278,7 @@ var app = new Vue({
 
             displayDefrag: function() {
                 this.show_defrag = !this.show_defrag
-                window.scrollTo(0,0);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             },
 
             initGraph: function (canvas, type) {
