@@ -39,26 +39,20 @@ var app = new Vue({
                     totalHiatus: 0
                 }
             },
-            show_defrag: false,
-            defrag: false,
             show_arcs: false,
+            defragging: false,
             info: {},
             major_hiatuses: []
         },
         computed: {
             issues_by_year: function () {
-                var defrag = this.defrag
                 var data = [];
                 var t = _.groupBy(this.all_issues, 'year');
                 Object.keys(t)
                     .sort()
                     .reverse()
                     .forEach(function (key) {
-                        if (defrag) {
-                            data.push({ year: key, issues: _.orderBy(t[key], ["released", "number"], ["desc", "asc"]) });
-                        } else {
-                            data.push({ year: key, issues: _.orderBy(t[key], ["number"], ["asc"]) });
-                        }
+                        data.push({year: key, issues: _.orderBy(t[key], ["number"], ["asc"])});
                     });
                 return data;
             },
@@ -275,10 +269,54 @@ var app = new Vue({
 
         },
         methods: {
+            reset(index) {
+                if (index === -1) {
+                    this.defragging = false;
+                    return;
+                }
+                let issue = this.all_issues[index];
+                issue.released = !!issue.arc
+                setTimeout(this.reset, 8, index - 1)
+            },
+            fill(index) {
+                if (index === -1) {
+                    setTimeout(this.reset, 1000, this.all_issues.length - 1);
+                    return;
+                }
+                let issue = this.all_issues[index];
+                issue.released = false
+                setTimeout(this.fill, 8, index - 1)
 
-            displayDefrag: function() {
-                this.show_defrag = !this.show_defrag
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            },
+            defragStep(index) {
+
+                if (index === this.all_issues.length) {
+                    this.fill(this.all_issues.length - 1)
+                    return;
+                }
+
+                let issue = this.all_issues[index];
+
+                let delay = 16;
+                if (issue.released) {
+                    for (const ex of this.all_issues) {
+                        if (!ex.released) {
+                            ex.released = true;
+                            issue.released = false;
+                            break;
+                        }
+                    }
+                } else {
+                    delay = 0
+                }
+                setTimeout(this.defragStep, delay, index + 1);
+            },
+            defrag() {
+                if (!this.defragging) {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                    this.defragging = true;
+                    setTimeout(this.defragStep, 1200, 0)
+                }
             },
 
             initGraph: function (canvas, type) {

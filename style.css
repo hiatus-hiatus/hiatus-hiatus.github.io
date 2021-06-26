@@ -189,5 +189,16 @@ a.chart-button:hover {
 }
 
 [v-cloak] {
-  display: none;
+    display: none;
+}
+
+@keyframes shrink {
+    50% {
+        height: 0;
+    }
+}
+
+
+.defragging div.h-col {
+    animation: shrink 800ms;
 }

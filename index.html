@@ -22,17 +22,15 @@
 <div id="app">
 
 
-    <div class="well container _container">
-        <div v-konami="displayDefrag"></div>
+    <div class="well container _container" v-konami="defrag " :class="{'defragging': defragging}">
         <button v-on:click="show_arcs = !show_arcs" class="fab">Arcs</button>
-        <button v-if="show_defrag" v-on:click="defrag = !defrag" class="fab" v-cloak>Defrag</button>
 
-        <h1 class="text-center">{{info.series_name}} Hiatus Chart</h1>
+        <h1 class="text-center">{{ info.series_name }} Hiatus Chart</h1>
 
         <div id="main-chart" class="row chart notransition">
             <div>
                 <div v-for="group in issues_by_year" class="h-row">
-                    <div class="chart-year">{{group.year}}</div>
+                    <div class="chart-year">{{ group.year }}</div>
                     <div class="h-col" v-for="issue in group.issues"
                          v-bind:class="[{'false': !issue.released},show_arcs? issue.arc?issue.arc:'hiatus-arc':'']"
                          v-bind:title="'Issue: ' + issue.number">
