@@ -1,7 +1,7 @@
 <template>
   <div class="arcs">
     <div v-for="([key, arc]) in arcs" :key="key" class="arc-item">
-      <div class="issue-square" :class="arc.color"/>
+      <div class="issue" :class="arc.color"/>
       <div class="arc-description">{{ arc.name }}</div>
     </div>
   </div>

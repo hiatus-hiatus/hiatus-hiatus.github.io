@@ -4,7 +4,7 @@
       {{ year }}
     </div>
     <div class="issues-list">
-      <issue v-for="issue in issues" :issue="issue" class="issue"/>
+      <issue v-for="issue in issues" :issue="issue"/>
     </div>
   </div>
 </template>
@@ -42,17 +42,14 @@ export default {
   }
 }
 
-.chart-row,
 .issues-list {
   display: flex;
-}
-
-.issues-list {
   flex-wrap: wrap;
 }
 
 .chart-row {
-  @include lgDown{
+  display: flex;
+  @include lgDown {
     margin-top: 16px;
   }
   @include smDown {
@@ -61,6 +58,12 @@ export default {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+
+  &:hover {
+    .issue {
+      filter: brightness(80%);
     }
   }
 }

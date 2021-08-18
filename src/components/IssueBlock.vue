@@ -1,6 +1,6 @@
 <template>
   <div
-      class="issue-square"
+      class="issue"
       :class="{ released: issue.released &&!showArcs, [color]: showArcs}"
   />
 </template>
@@ -40,7 +40,7 @@ export default defineComponent({
 <style lang="scss">
 @import "../style";
 
-.issue-square {
+.issue {
   width: 38px;
   height: 30px;
   background: $hiatusColor;
@@ -60,15 +60,5 @@ export default defineComponent({
   &.released {
     background: $releaseColor;
   }
-}
-
-
-.chart-row:hover .issue-square {
-  background-color: #CC0000;
-
-  &.released {
-    background-color: #0099CC;
-  }
-
 }
 </style>
