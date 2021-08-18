@@ -1,14 +1,16 @@
 <template>
   <div
       class="issue-square"
-      :class="{ released: issue.released }"
+      :class="{ released: issue.released &&!showArcs, [color]: showArcs}"
   />
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue'
+import {computed, defineComponent, inject, PropType, watch} from 'vue'
+import ArcsInfo from "../ArcsInfo.vue";
 
 export default defineComponent({
+  inject: ['arcs'],
   name: "Issue",
   props: {
     issue: {
@@ -16,14 +18,27 @@ export default defineComponent({
       required: true
     }
   },
+  setup(props) {
+    const arcs = inject('arcs', new Map<string, ArcsInfo>());
+    const showArcs = inject('showArcs', false);
+
+    const color = computed(() => {
+      if (showArcs.value) {
+        const arc = arcs.value.get(props.issue.arc) || {};
+        return arc.color || 'gray-300';
+      } else {
+        return 'gray-300'
+      }
+    });
+    return {
+      showArcs, arcs, color
+    }
+  }
 });
 </script>
 
 <style lang="scss">
 @import "../style";
-
-$releaseColor: #33B5E5;
-$hiatusColor: #ff4444;
 
 .issue-square {
   width: 38px;

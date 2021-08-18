@@ -1,10 +1,9 @@
 <template>
   <div class="arcs">
-    <div v-for="(arc, i) in arcs" :key="i" class="arc-item">
+    <div v-for="([key, arc]) in arcs" :key="key" class="arc-item">
       <div class="issue-square" :class="arc.color"/>
       <div class="arc-description">{{ arc.name }}</div>
     </div>
-
   </div>
 </template>
 <script lang="ts">
@@ -15,7 +14,7 @@ export default {
   name: 'arcs-info',
   components: {Issue},
   props: {
-    arcs: Object as PropType<ArcInfo>
+    arcs: Object as PropType<Map<string, ArcInfo>>
   }
 }
 </script>
@@ -31,9 +30,11 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.arc-description{
+
+.arc-description {
   margin-left: 4px;
 }
+
 .arc-item {
   width: 250px;
   margin-top: 4px;

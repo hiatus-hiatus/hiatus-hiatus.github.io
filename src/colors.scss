@@ -1,3 +1,9 @@
+$releaseColor: #33B5E5;
+$hiatusColor: #ff4444;
+$boxShadowColor: rgba(170, 170, 170, 0.67);
+
+
+
 .indigo-500 {
   background-color: #3F51B5;
 }
@@ -40,4 +46,12 @@
 
 .deep-orange-500 {
   background-color: #FF5722;
+}
+
+.hiatus {
+  background-color: $hiatusColor;
+}
+
+.released {
+  background-color: $releaseColor;
 }

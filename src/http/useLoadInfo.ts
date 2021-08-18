@@ -10,7 +10,7 @@ export default function useUserRepositories(): {
     name: "",
     ongoing: false,
     marjorHiatusThreshold: 0,
-    arcs: new Array<ArcInfo>(),
+    arcs: new Map<string, ArcInfo>(),
   });
 
   onMounted(async () => {
@@ -19,10 +19,12 @@ export default function useUserRepositories(): {
       const response = await fetch("/HunterXHunter/info.json");
       const data = await response.json();
 
+      for (const arc of data.arcs) {
+        seriesInfo.value.arcs.set(arc.key, arc);
+      }
       seriesInfo.value.name = data.series_name;
       seriesInfo.value.ongoing = data.ongoing;
       seriesInfo.value.marjorHiatusThreshold = data.marjorHiatusThreshold;
-      seriesInfo.value.arcs = data.arcs;
     } finally {
       loading.value = false;
     }
