@@ -17,7 +17,7 @@ export default {
   components: {Issue},
   props: {
     issuesByYear: {
-      type: Object as PropType<Map<number, IssueItem[]>>
+      type: Object as PropType<Map<number, IssueInfo[]>>
     }
   }
 }

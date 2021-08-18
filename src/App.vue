@@ -4,58 +4,48 @@
       HUNTER×HUNTER Hiatus Chart
     </div>
     <yearly-issues :issues-by-year="issuesByYear"/>
+    <arcs-info :arcs="seriesInfo.arcs"/>
+
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {computed, defineComponent, onMounted, ref} from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Issue from "./components/IssueBlock.vue";
 import YearlyIssues from "./components/YearlyIssues.vue";
+import ArcsInfo from "./ArcsInfo.vue";
 
+import useLoadInfo from './http/useLoadInfo'
+import useLoadIssues from './http/useLoadIssues'
 
 export default defineComponent({
   name: 'App',
   components: {
+    ArcsInfo,
     YearlyIssues,
     Issue,
     HelloWorld
   },
 
-  data() {
+  setup() {
+    const {seriesInfo, loading: infoLoading} = useLoadInfo();
+    const {issues, loading: issuesLoading} = useLoadIssues();
 
+    const loading = computed(() => {
+      return infoLoading.value || issuesLoading.value;
+    })
 
     return {
-      loading: false,
-      series_name: "",
-      ongoing: false,
-      major_hiatus_threshold: 0,
-      arcs: [],
-      issues: new Array<IssueItem>()
-    };
-  },
-  async created() {
-    try {
-      this.loading = true;
-      await Promise.all([this.loadInfo(), this.loadIssues()]);
-    } finally {
-      this.loading = false;
+      seriesInfo, issues, loading
     }
+
   },
-  methods: {
-    async loadInfo() {
-      const response = await fetch("/HunterXHunter/info.json");
-      const data = await response.json();
-      this.series_name = data.series_name;
-    },
-    async loadIssues() {
-      const response = await fetch("/HunterXHunter/issues.json");
-      this.issues = await response.json()
-    }
-  },
+
+
   computed: {
-    issuesByYear(): Map<number, IssueItem[]> {
-      let group: Map<number, IssueItem[]> = new Map();
+    issuesByYear(): Map<number, IssueInfo[]> {
+      let group: Map<number, IssueInfo[]> = new Map();
 
       for (const issue of this.issues) {
         const issues = group.get(issue.year) || [];

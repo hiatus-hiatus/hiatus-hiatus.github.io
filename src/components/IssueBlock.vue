@@ -1,23 +1,22 @@
 <template>
   <div
       class="issue-square"
-      :class="{
-      released: issue.released,
-      hiatus: !issue.released
-    }"
+      :class="{ released: issue.released }"
   />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent, PropType} from 'vue'
+
+export default defineComponent({
   name: "Issue",
   props: {
     issue: {
-      type: Object,
+      type: Object as PropType<IssueInfo>,
       required: true
     }
-  }
-};
+  },
+});
 </script>
 
 <style lang="scss">
@@ -34,7 +33,7 @@ $hiatusColor: #ff4444;
   margin-left: 1px;
   margin-bottom: 2px;
 
-  @include lg{
+  @include lg {
     width: 31px;
     height: 25px;
   }
