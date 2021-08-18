@@ -1,74 +1,69 @@
 <template>
-  <div class="card">
-    <div class="card-title">
+  <div class="section">
+    <div class="section-title">
       HUNTER×HUNTER Hiatus Chart
     </div>
-    <div class="chart-row" v-for="year in issues_by_year">
-      <div class="year">
-        {{ year.year }}
-      </div>
-      <div class="issues-list">
-        <issue v-for="issue in year.issues" :issue="issue" class="issue" />
-      </div>
-    </div>
+    <yearly-issues :issues-by-year="issuesByYear"/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import Issue from "./components/IssueBlock.vue";
+import YearlyIssues from "./components/YearlyIssues.vue";
+
 
 export default defineComponent({
   name: 'App',
   components: {
+    YearlyIssues,
+    Issue,
     HelloWorld
   },
 
   data() {
+
+
     return {
       loading: false,
       series_name: "",
       ongoing: false,
       major_hiatus_threshold: 0,
       arcs: [],
-      issues: []
+      issues: new Array<IssueItem>()
     };
   },
-  created() {
-    this.load();
+  async created() {
+    try {
+      this.loading = true;
+      await Promise.all([this.loadInfo(), this.loadIssues()]);
+    } finally {
+      this.loading = false;
+    }
   },
   methods: {
-    async load() {
-      this.loading = true;
-      try {
-
-        const response = await fetch("/HunterXHunter/info.json");
-        const data = await response.json();
-
-        this.series_name = data.series_name;
-        this.issues = data.issues.reverse();
-      } finally {
-        this.loading = false;
-      }
+    async loadInfo() {
+      const response = await fetch("/HunterXHunter/info.json");
+      const data = await response.json();
+      this.series_name = data.series_name;
+    },
+    async loadIssues() {
+      const response = await fetch("/HunterXHunter/issues.json");
+      this.issues = await response.json()
     }
   },
   computed: {
-    issues_by_year() {
-      const grouped_by_year = {};
+    issuesByYear(): Map<number, IssueItem[]> {
+      let group: Map<number, IssueItem[]> = new Map();
 
       for (const issue of this.issues) {
-        if (!grouped_by_year[issue.year]) {
-          grouped_by_year[issue.year] = [];
-        }
-        grouped_by_year[issue.year].push(issue);
+        const issues = group.get(issue.year) || [];
+        issues.push(issue)
+        group.set(issue.year, issues)
       }
 
-      const data = [];
-      for (const year of Object.keys(grouped_by_year).reverse()) {
-        data.push({ year, issues: grouped_by_year[year] });
-      }
-      console.log(data);
-      return data;
+      return group;
     }
   }
 })

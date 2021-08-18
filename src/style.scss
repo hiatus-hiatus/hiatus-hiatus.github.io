@@ -1,19 +1,64 @@
+$boxShadowColor: rgba(170, 170, 170, 0.67);
+
+@mixin sm {
+  @media (min-width: 576px) {
+    @content
+  }
+}
+
+@mixin smDown {
+  @media (max-width: 767px) {
+    @content
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin mdDown {
+  @media (max-width: 991px) {
+    @content
+  }
+}
+
+@mixin lg {
+  @media (min-width: 992px) {
+    @content
+  }
+}
+
+@mixin lgDown {
+  @media (max-width: 1199px) {
+    @content
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content
+  }
+}
+
+
 body {
   background-color: #eeeeee;
   margin: 0;
+  justify-content: center;
+  display: flex;
 }
+
 
 .app {
   display: flex;
   flex-wrap: nowrap;
   padding-top: 16px;
 
-  @media (min-width: 1280px) {
-    justify-content: center;
-  }
 }
 
-.card {
+.section {
   padding: 24px;
   background-color: white;
   max-width: 1280px;
@@ -21,51 +66,16 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   flex: 1;
-  box-shadow: 2px 2px 2px 2px #aaaaaaaa;
-  @media (max-width: 1280px) {
+  box-shadow: 2px 2px 2px 2px $boxShadowColor;
+
+  @include lgDown {
     padding: 16px;
   }
 }
 
-.card-title {
+.section-title {
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 16px;
 }
 
-.year {
-  padding: 0;
-  display: flex;
-  margin-right: 8px;
-  font-size: 12px;
-  width: 25px;
-
-  @media (max-width: 1279px) {
-    font-size: 1.5em;
-    width: auto;
-    margin-top: 4px;
-  }
-}
-
-.chart-row,
-.issues-list {
-  display: flex;
-
-  @media (max-width: 1279px) {
-    margin-top: 8px;
-  }
-}
-.issues-list {
-  flex-wrap: wrap;
-}
-
-.chart-row {
-  @media (max-width: 1279px) {
-    flex-direction: column;
-    .year {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
