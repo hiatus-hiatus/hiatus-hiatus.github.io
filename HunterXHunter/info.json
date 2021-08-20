@@ -1,7 +1,7 @@
 {
   "series_name": "HUNTER×HUNTER",
   "ongoing": true,
-  "major_hiatus_threshold": 4,
+  "streaks_threshold": 10,
   "arcs": [
     {
       "key": "hiatus-arc",

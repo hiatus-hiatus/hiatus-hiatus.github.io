@@ -1,6 +1,6 @@
 import { onMounted, Ref, ref } from "vue";
 
-export default function useUserRepositories(): {
+export default function useUserRepositories(dir: string): {
   issues: Ref<IssueInfo[]>;
   loading: Ref<Boolean>;
 } {
@@ -11,7 +11,7 @@ export default function useUserRepositories(): {
   onMounted(async () => {
     try {
       loading.value = true;
-      const response = await fetch("/HunterXHunter/issues.json");
+      const response = await fetch(`/${dir}/issues.json`);
       issues.value = await response.json();
     } finally {
       loading.value = false;

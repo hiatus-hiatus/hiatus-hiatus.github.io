@@ -1,6 +1,6 @@
 import { onMounted, Ref, ref } from "vue";
 
-export default function useUserRepositories(): {
+export default function useUserRepositories(dir: string): {
   seriesInfo: Ref<SeriesInfo>;
   loading: Ref<Boolean>;
 } {
@@ -9,14 +9,14 @@ export default function useUserRepositories(): {
   const seriesInfo = ref<SeriesInfo>({
     name: "",
     ongoing: false,
-    marjorHiatusThreshold: 0,
+    streaksThreshold: 0,
     arcs: new Map<string, ArcInfo>(),
   });
 
   onMounted(async () => {
     try {
       loading.value = true;
-      const response = await fetch("/HunterXHunter/info.json");
+      const response = await fetch(`/${dir}/info.json`);
       const data = await response.json();
 
       for (const arc of data.arcs) {
@@ -24,7 +24,7 @@ export default function useUserRepositories(): {
       }
       seriesInfo.value.name = data.series_name;
       seriesInfo.value.ongoing = data.ongoing;
-      seriesInfo.value.marjorHiatusThreshold = data.marjorHiatusThreshold;
+      seriesInfo.value.streaksThreshold = data.streaks_threshold;
       seriesInfo.value.faq = data.faq;
     } finally {
       loading.value = false;

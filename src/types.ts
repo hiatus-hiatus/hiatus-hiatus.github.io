@@ -15,7 +15,7 @@ type SeriesInfo = {
   arcs: Map<string, ArcInfo>;
   name: string;
   ongoing: boolean;
-  marjorHiatusThreshold: number;
+  streaksThreshold: number;
   faq?: FaqItem[];
 };
 

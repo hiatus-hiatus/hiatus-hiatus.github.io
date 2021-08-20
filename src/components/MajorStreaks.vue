@@ -80,6 +80,10 @@ export default defineComponent({
       type: Object as PropType<IssueInfo[]>,
       required: true,
     },
+    threshold: {
+      type: Number as PropType<number>,
+      required: true,
+    },
   },
   setup: (props) => {
     const showBreaks = ref(true);
@@ -91,7 +95,7 @@ export default defineComponent({
       return Math.max(...streaks.value.map((streak) => streak.count));
     });
 
-    const threshold = ref(10);
+    const threshold = ref(props.threshold);
     const includeReleases = ref(false);
     const filteredStreaks = computed(() => {
       return streaks.value
