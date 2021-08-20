@@ -13,7 +13,7 @@ import Issue from "./IssueBlock.vue"
 import {PropType} from "vue";
 
 export default {
-  name: 'YearlyIssues',
+  name: 'MainChart',
   components: {Issue},
   props: {
     issuesByYear: {

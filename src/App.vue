@@ -1,10 +1,10 @@
 <template>
   <div class="section">
-    <div class="section-title" @click="showArcs = !showArcs">
+    <div class="section-title main" @click="showArcs = !showArcs">
       HUNTER×HUNTER Hiatus Chart
       <button class="fab">Arcs</button>
     </div>
-    <yearly-issues :issues-by-year="issuesByYear" />
+    <main-chart :issues-by-year="issuesByYear" />
     <arcs-info :arcs="arcs" />
   </div>
   <article class="section" v-if="seriesInfo.faq">
@@ -12,6 +12,7 @@
     <faq :items="seriesInfo.faq" />
   </article>
   <major-streaks :issues="issues" v-if="issues.length > 0" />
+  <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
   <attribution />
 </template>
 
@@ -19,7 +20,6 @@
 import { computed, defineComponent, provide, ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Issue from "./components/IssueBlock.vue";
-import YearlyIssues from "./components/YearlyIssues.vue";
 import ArcsInfo from "./ArcsInfo.vue";
 
 import useLoadInfo from "./http/useLoadInfo";
@@ -27,15 +27,18 @@ import useLoadIssues from "./http/useLoadIssues";
 import Attribution from "./components/Attributtion.vue";
 import Faq from "./components/Faq.vue";
 import MajorStreaks from "./components/MajorStreaks.vue";
+import MainChart from "./components/MainChart.vue";
+import TrendByYear from "./components/TrendByYear.vue";
 
 export default defineComponent({
   name: "App",
   components: {
+    TrendByYear,
+    MainChart,
     MajorStreaks,
     Faq,
     Attribution,
     ArcsInfo,
-    YearlyIssues,
     Issue,
     HelloWorld,
   },
@@ -115,8 +118,6 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 </style>

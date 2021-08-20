@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="section-title clickable" @click="showFilters = !showFilters">
-      Major streaks
+      Streaks
       <span class="material-icons">
         <template v-if="showFilters">expand_less</template>
         <template v-else>expand_more</template>
@@ -19,7 +19,7 @@
           <div
             class="issue hiatus"
             style="display: inline-block; margin-bottom: 0"
-          ></div>
+          />
           Hiatus streaks
         </label>
         <label>
@@ -27,7 +27,7 @@
           <div
             class="issue released"
             style="display: inline-block; margin-bottom: 0"
-          ></div>
+          />
           Release streaks
         </label>
       </div>
@@ -38,7 +38,7 @@
           <th>Start</th>
           <th>End</th>
           <th>Chapters</th>
-          <th>Number of issues</th>
+          <th>Streak (issues)</th>
         </tr>
       </thead>
       <tr v-for="streak in filteredStreaks">
