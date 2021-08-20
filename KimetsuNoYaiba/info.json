@@ -1,0 +1,58 @@
+{
+  "series_name": "Kimetsu no Yaiba",
+  "ongoing": false,
+  "major_hiatus_threshold": 4,
+  "arcs": [
+    {
+      "key": "hiatus-arc",
+      "name": "Great Hiatus Arc"
+    },
+    {
+      "key": "arc1",
+      "name": "Final Seclection"
+    },
+    {
+      "key": "arc2",
+      "name": "First Mission"
+    },
+    {
+      "key": "arc3",
+      "name": "Asakusa"
+    },
+    {
+      "key": "arc4",
+      "name": "Drum House"
+    },
+    {
+      "key": "arc5",
+      "name": "Natagumo Mountain"
+    },
+    {
+      "key": "arc6",
+      "name": "Functional Recovery Training"
+    },
+    {
+      "key": "arc7",
+      "name": "Demon Train"
+    },
+    {
+      "key": "arc8",
+      "name": "Red Light District"
+    },  {
+      "key": "arc9",
+      "name": "Swordsmith Village"
+    },
+    {
+      "key": "arc10",
+      "name": "Pillar Training"
+    }
+    {
+      "key": "arc11",
+      "name": "Infinity Castle"
+    }
+    {
+      "key": "arc12",
+      "name": "Sunrise Countdown"
+    }
+  ]
+}

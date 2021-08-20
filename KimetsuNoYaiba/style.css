@@ -1,0 +1,116 @@
+.hiatus-arc {
+    background-color: #E0E0E0;
+}
+
+.h-row:hover .hiatus-arc {
+    background-color: #CACACA !important;
+}
+
+.arc1 {
+    background-color: #3F51B5;
+}
+
+.h-row:hover .arc1 {
+    background-color: #1A237E;
+}
+
+.arc2 {
+    background-color: #009688;
+}
+
+.h-row:hover .arc2 {
+    background-color: #004D40;
+}
+
+.arc3 {
+    background-color: #FFC107;
+}
+
+.h-row:hover .arc3 {
+    background-color: #FF6F00;
+}
+
+.arc4 {
+    background-color: #4CAF50;
+}
+
+.h-row:hover .arc4 {
+    background-color: #43A047;
+}
+
+.arc5 {
+    background-color: #FF5722;
+}
+
+.h-row:hover .arc5 {
+    background-color: #F4511E;
+}
+
+.arc6 {
+    background-color: #9C27B0;
+}
+
+.h-row:hover .arc6 {
+    background-color: #7B1FA2;
+}
+
+.arc7 {
+    background-color: #E91E63;
+}
+
+.h-row:hover .arc7 {
+    background-color: #C2185B;
+}
+
+.arc8 {
+    background-color: #607D8B;
+}
+
+.h-row:hover .arc8 {
+    background-color: #546E7A;
+}
+
+.arc9 {
+    background-color: #F44336;
+}
+
+.h-row:hover .arc9 {
+    background-color: #B71C1C;
+}
+
+.arc10 {
+    background-color: #CDDC39;
+}
+
+.h-row:hover .arc10 {
+    background-color: #B5C434;
+}
+
+.arc11 {
+    background-color: #FF9999;
+}
+
+.h-row:hover .arc11 {
+    background-color: #FC7171;
+}
+
+.arc12 {
+    background-color: #B8CCE4;
+}
+
+.h-row:hover .arc12 {
+    background-color: #94B6DD;
+}
+
+.arc13 {
+    background-color: #C4D79B;
+}
+
+.h-row:hover .arc13 {
+    background-color: #B6CE7D;
+}
+
+/*add a margin to the last row*/
+.chart div .h-row:last-child .h-col:nth-child(2) {
+    margin-left: 186px;
+}
