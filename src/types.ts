@@ -16,7 +16,10 @@ type SeriesInfo = {
   name: string;
   ongoing: boolean;
   streaksThreshold: number;
+  showFaq: boolean;
   faq?: FaqItem[];
+  date?: string | Date;
+  attribution?: AttributionInfo;
 };
 
 type FaqItem = {
@@ -27,6 +30,16 @@ type FaqItem = {
 type Streak = {
   start: IssueInfo;
   end: IssueInfo;
-  released: boolean,
+  released: boolean;
   count: number;
+};
+
+type LinkItem = {
+  name: string;
+  link: string;
+};
+
+type AttributionInfo = {
+  authors: LinkItem[];
+  sources: LinkItem[];
 };

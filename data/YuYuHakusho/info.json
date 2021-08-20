@@ -2,6 +2,18 @@
   "series_name": "Yu Yu Hakusho",
   "ongoing": false,
   "streaks_threshold": 1,
+  "attribution": {
+    "sources": [
+      {
+        "name": "hunter.noihjp.com",
+        "link": "https://hunter.noihjp.com/rest/"
+      },
+      {
+        "name": "Comic Vine",
+        "link": "https://comicvine.gamespot.com/"
+      }
+    ]
+  },
   "arcs": [
     {
       "key": "hiatus-arc",

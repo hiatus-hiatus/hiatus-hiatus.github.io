@@ -10,7 +10,12 @@ export default function useUserRepositories(dir: string): {
     name: "",
     ongoing: false,
     streaksThreshold: 0,
+    showFaq: false,
     arcs: new Map<string, ArcInfo>(),
+    attribution: {
+      sources: [],
+      authors: [],
+    },
   });
 
   onMounted(async () => {
@@ -25,7 +30,9 @@ export default function useUserRepositories(dir: string): {
       seriesInfo.value.name = data.series_name;
       seriesInfo.value.ongoing = data.ongoing;
       seriesInfo.value.streaksThreshold = data.streaks_threshold;
+      seriesInfo.value.showFaq = data.show_faq;
       seriesInfo.value.faq = data.faq;
+      seriesInfo.value.attribution = data.attribution;
     } finally {
       loading.value = false;
     }

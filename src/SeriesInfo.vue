@@ -7,9 +7,9 @@
     <main-chart :issues-by-year="issuesByYear" />
     <arcs-info :arcs="arcs" />
   </div>
-  <article class="section" v-if="seriesInfo.faq">
+  <article class="section" v-if="seriesInfo.showFaq && !loading">
     <div class="section-title">Frequently Asked Questions</div>
-    <faq :items="seriesInfo.faq" />
+    <faq :items="seriesInfo.faq" :latest-release="latestRelease" />
   </article>
   <major-streaks
     :issues="issues"
@@ -18,7 +18,7 @@
   />
   <related-links />
   <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
-  <attribution />
+  <attribution :series-info="seriesInfo" v-if="!loading" />
 </template>
 
 <script lang="ts">
@@ -35,7 +35,6 @@ import MajorStreaks from "./components/MajorStreaks.vue";
 import MainChart from "./components/MainChart.vue";
 import TrendByYear from "./components/TrendByYear.vue";
 import { useRoute } from "vue-router";
-import router from "./router";
 import RelatedLinks from "./components/RelatedLinks.vue";
 
 export default defineComponent({

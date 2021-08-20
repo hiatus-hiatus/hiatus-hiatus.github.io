@@ -2,6 +2,18 @@
   "series_name": "HUNTER×HUNTER",
   "ongoing": true,
   "streaks_threshold": 10,
+  "attribution": {
+    "sources": [
+      {
+        "name": "hunter.noihjp.com",
+        "link": "https://hunter.noihjp.com/rest/"
+      },
+      {
+        "name": "Comic Vine",
+        "link": "https://comicvine.gamespot.com/"
+      }
+    ]
+  },
   "arcs": [
     {
       "key": "hiatus-arc",
@@ -59,18 +71,7 @@
       "name": "Kurapika's One Shot"
     }
   ],
+  "show_faq": true,
   "faq": [
-    {
-      "question": "When was the last chapter released?",
-      "answer": "Last chapter was released on November 28, 2018."
-    },
-    {
-      "question": "How long has it been since the last chapter?",
-      "answer": "2 years 6 months 4 days. 1000 days in total."
-    },
-    {
-      "question": "When is the next chapter going to be released?",
-      "answer": "Only Togashi knows."
-    }
   ]
 }
