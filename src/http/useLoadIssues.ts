@@ -11,7 +11,7 @@ export default function useUserRepositories(dir: string): {
   onMounted(async () => {
     try {
       loading.value = true;
-      const response = await fetch(`/${dir}/issues.json`);
+      const response = await fetch(`/data/${dir}/issues.json`);
       issues.value = await response.json();
     } finally {
       loading.value = false;

@@ -11,7 +11,12 @@
     <div class="section-title">Frequently Asked Questions</div>
     <faq :items="seriesInfo.faq" />
   </article>
-  <major-streaks :issues="issues" v-if="issues.length > 0"  :threshold="seriesInfo.streaksThreshold"/>
+  <major-streaks
+    :issues="issues"
+    v-if="issues.length > 0"
+    :threshold="seriesInfo.streaksThreshold"
+  />
+  <related-links />
   <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
   <attribution />
 </template>
@@ -31,10 +36,12 @@ import MainChart from "./components/MainChart.vue";
 import TrendByYear from "./components/TrendByYear.vue";
 import { useRoute } from "vue-router";
 import router from "./router";
+import RelatedLinks from "./components/RelatedLinks.vue";
 
 export default defineComponent({
   name: "SeriesInfo",
   components: {
+    RelatedLinks,
     TrendByYear,
     MainChart,
     MajorStreaks,

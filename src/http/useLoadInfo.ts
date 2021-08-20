@@ -16,7 +16,7 @@ export default function useUserRepositories(dir: string): {
   onMounted(async () => {
     try {
       loading.value = true;
-      const response = await fetch(`/${dir}/info.json`);
+      const response = await fetch(`/data/${dir}/info.json`);
       const data = await response.json();
 
       for (const arc of data.arcs) {

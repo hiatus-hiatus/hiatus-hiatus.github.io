@@ -6,6 +6,9 @@ const routes = [
     path: "/",
     name: "hxh",
     component: SeriesInfo,
+    meta: {
+      dir: "HunterXHunter",
+    },
   },
   {
     path: "/YuYuHakusho",
