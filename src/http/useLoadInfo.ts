@@ -25,6 +25,7 @@ export default function useUserRepositories(): {
       seriesInfo.value.name = data.series_name;
       seriesInfo.value.ongoing = data.ongoing;
       seriesInfo.value.marjorHiatusThreshold = data.marjorHiatusThreshold;
+      seriesInfo.value.faq = data.faq;
     } finally {
       loading.value = false;
     }

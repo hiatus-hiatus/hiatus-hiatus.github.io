@@ -1,39 +1,39 @@
 <template>
   <div
-      class="issue"
-      :class="{ released: issue.released &&!showArcs, [color]: showArcs}"
+    class="issue"
+    :class="{ released: issue.released && !showArcs, [color]: showArcs }"
   />
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, inject, PropType, watch} from 'vue'
-import ArcsInfo from "../ArcsInfo.vue";
+import { computed, defineComponent, inject, PropType, Ref } from "vue";
 
 export default defineComponent({
-  inject: ['arcs'],
   name: "Issue",
   props: {
     issue: {
       type: Object as PropType<IssueInfo>,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
-    const arcs = inject('arcs', new Map<string, ArcsInfo>());
-    const showArcs = inject('showArcs', false);
+    const arcs = inject("arcs", new Map<string, ArcInfo>());
+    const showArcs: Ref<Boolean> = inject("showArcs", false);
 
     const color = computed(() => {
       if (showArcs.value) {
         const arc = arcs.value.get(props.issue.arc) || {};
-        return arc.color || 'gray-300';
+        return arc.color || "gray-300";
       } else {
-        return 'gray-300'
+        return "gray-300";
       }
     });
     return {
-      showArcs, arcs, color
-    }
-  }
+      showArcs,
+      arcs,
+      color,
+    };
+  },
 });
 </script>
 

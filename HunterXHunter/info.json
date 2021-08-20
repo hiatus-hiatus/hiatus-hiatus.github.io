@@ -58,5 +58,19 @@
       "color": "red-500",
       "name": "Kurapika's One Shot"
     }
+  ],
+  "faq": [
+    {
+      "question": "When was the last chapter released?",
+      "answer": "Last chapter was released on November 28, 2018."
+    },
+    {
+      "question": "How long has it been since the last chapter?",
+      "answer": "2 years 6 months 4 days. 1000 days in total."
+    },
+    {
+      "question": "When is the next chapter going to be released?",
+      "answer": "Only Togashi knows."
+    }
   ]
 }

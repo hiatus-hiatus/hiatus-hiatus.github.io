@@ -65,11 +65,9 @@ body {
   background-color: white;
   max-width: 1280px;
   overflow: hidden;
-  justify-content: center;
-  align-content: center;
 
   box-shadow: 2px 2px 2px 2px $boxShadowColor;
-
+  margin-bottom: 32px;
   @include lgDown {
     padding: 16px;
   }
@@ -117,6 +115,18 @@ a {
   text-decoration: none;
 }
 
-footer{
+footer {
   font-size: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:active {
+    .material-icons {
+
+      background-color: #ddd;
+      transition: 300ms;
+    }
+  }
 }

@@ -1,22 +1,22 @@
 <template>
   <div class="arcs">
-    <div v-for="([key, arc]) in arcs" :key="key" class="arc-item">
-      <div class="issue" :class="arc.color"/>
+    <div v-for="[key, arc] in arcs" :key="key" class="arc-item">
+      <div class="issue" :class="arc.color" />
       <div class="arc-description">{{ arc.name }}</div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import {PropType} from "vue";
+import { PropType } from "vue";
 import Issue from "./components/IssueBlock.vue";
 
 export default {
-  name: 'arcs-info',
-  components: {Issue},
+  name: "arcs-info",
+  components: { Issue },
   props: {
-    arcs: Object as PropType<Map<string, ArcInfo>>
-  }
-}
+    arcs: Object as PropType<Map<string, ArcInfo>>,
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -41,5 +41,4 @@ export default {
   display: flex;
   flex: auto;
 }
-
 </style>

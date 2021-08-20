@@ -1,6 +1,6 @@
 type IssueInfo = {
   year: number;
-  issue: number;
+  number: number;
   released: boolean;
   arc?: string;
 };
@@ -16,4 +16,17 @@ type SeriesInfo = {
   name: string;
   ongoing: boolean;
   marjorHiatusThreshold: number;
+  faq?: FaqItem[];
+};
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+type Streak = {
+  start: IssueInfo;
+  end: IssueInfo;
+  released: boolean,
+  count: number;
 };
