@@ -41,12 +41,16 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-top: 16px;
+  padding-top: 8px;
+
+  @include md {
+    padding-top: 32px;
+  }
 }
 
 .section {
   background-color: white;
-  max-width: 1280px;
+
   overflow: hidden;
 
   margin-left: 8px;
@@ -69,7 +73,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 16px;
+  border-bottom: solid 1px #eee;
+
+  &:not(.main) {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+
   width: 100%;
 
   @include md {
@@ -85,6 +95,8 @@ body {
   @include md {
     font-size: 2.5em;
   }
+
+  border-bottom: 0;
 }
 
 .button {
@@ -111,6 +123,10 @@ body {
   color: white;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 5px 0 rgb(0 0 0 / 23%);
   cursor: pointer;
+
+  @include sm {
+    margin-top: -48px;
+  }
 
   &:active {
     opacity: 0.5;

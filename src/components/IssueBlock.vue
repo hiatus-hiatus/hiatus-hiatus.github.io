@@ -41,8 +41,8 @@ export default defineComponent({
 @import "../style";
 
 .issue {
-  width: 50px;
-  height: 30px;
+  width: $issueWidthMd + 4px;
+  height: 16px;
   background: $hiatusColor;
   margin-right: 1px;
   margin-left: 1px;

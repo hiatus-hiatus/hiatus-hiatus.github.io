@@ -38,7 +38,7 @@
           <th>Start</th>
           <th>End</th>
           <th>Chapters</th>
-          <th>Streak (issues)</th>
+          <th>Streak (total issues)</th>
         </tr>
       </thead>
       <tr v-for="streak in filteredStreaks">
@@ -55,7 +55,7 @@
             <template v-else>Special</template>
           </template>
         </td>
-        <td class="streak-col" style="width: 70%">
+        <td class="streak-col">
           <div
             :style="{ width: `${(streak.count / longestStreak) * 100}%` }"
             class="streak"
@@ -154,7 +154,7 @@ table {
 }
 
 .streak-col {
-  width: 200px;
+  width: 50%;
 }
 
 .filter-threshold {
@@ -192,6 +192,7 @@ table {
   justify-content: center;
   align-items: center;
   padding: 16px;
+  margin-bottom: 32px;
 }
 
 .filter-include-releases {

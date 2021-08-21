@@ -30,10 +30,9 @@ export default {
 
 .year {
   padding: 0;
-  display: flex;
   margin-right: 8px;
-  font-size: 2em;
-  width: 25px;
+  font-size: 1.2em;
+  min-width: 40px;
   margin-bottom: 4px;
   @include sm {
     width: auto;
