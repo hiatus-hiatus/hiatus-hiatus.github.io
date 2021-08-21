@@ -9,7 +9,7 @@
 <script lang="ts">
 import Issue from "./IssueBlock.vue";
 import { defineComponent, onMounted, PropType, ref } from "vue";
-import Chart from "chart.js/auto";
+import { Chart } from "chart.js";
 
 export default defineComponent({
   name: "TrendByYear",
@@ -26,7 +26,7 @@ export default defineComponent({
     const labels = Array.from(props.issuesByYear.keys()).reverse();
 
     const breaks = Array.from(props.issuesByYear.values())
-      .map((list) => list.filter((issue) => !issue.released).length * -1)
+      .map((list) => list.filter((issue) => !issue.released).length * -1) // invert y axis
       .reverse();
 
     const releases = Array.from(props.issuesByYear.values())
@@ -58,7 +58,7 @@ export default defineComponent({
             tooltip: {
               callbacks: {
                 label(context) {
-                  return Math.abs(context.raw)
+                  return Math.abs(context.raw);
                 },
               },
             },
@@ -74,11 +74,6 @@ export default defineComponent({
             },
             x: {
               stacked: true,
-            },
-          },
-          elements: {
-            line: {
-              fill: true,
             },
           },
         },
