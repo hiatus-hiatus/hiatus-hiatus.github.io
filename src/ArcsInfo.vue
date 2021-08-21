@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "style";
+
 .arcs {
   margin-left: auto;
   margin-right: auto;
@@ -36,9 +38,13 @@ export default {
 }
 
 .arc-item {
-  width: 250px;
   margin-top: 4px;
   display: flex;
   flex: auto;
+  width: 100%;
+  @include md {
+    width: 50%;
+  }
+  align-items: center;
 }
 </style>

@@ -41,19 +41,19 @@ export default defineComponent({
 @import "../style";
 
 .issue {
-  width: 38px;
+  width: 50px;
   height: 30px;
   background: $hiatusColor;
   margin-right: 1px;
   margin-left: 1px;
   margin-bottom: 2px;
 
-  @include lg {
-    width: 31px;
-    height: 25px;
+  @include md {
+    width: $issueWidthMd;
+    height: 13px;
   }
-  @include xl {
-    width: 22px;
+  @include lg {
+    width: $issueWidthLg;
     height: 17px;
   }
 

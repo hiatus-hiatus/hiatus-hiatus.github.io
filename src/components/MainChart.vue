@@ -1,64 +1,87 @@
 <template>
-  <div class="chart-row" v-for="([year, issues]) in issuesByYear">
-    <div class="year">
-      {{ year }}
-    </div>
-    <div class="issues-list">
-      <issue v-for="issue in issues" :issue="issue"/>
+  <div class="rows">
+    <div class="chart-row" v-for="[year, issues] in issuesByYear">
+      <div class="year">
+        {{ year }}
+      </div>
+      <div class="issues-list">
+        <issue v-for="issue in issues" :issue="issue" />
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Issue from "./IssueBlock.vue"
-import {PropType} from "vue";
+import Issue from "./IssueBlock.vue";
+import { PropType } from "vue";
 
 export default {
-  name: 'MainChart',
-  components: {Issue},
+  name: "MainChart",
+  components: { Issue },
   props: {
     issuesByYear: {
-      type: Object as PropType<Map<number, IssueInfo[]>>
-    }
-  }
-}
+      type: Object as PropType<Map<number, IssueInfo[]>>,
+    },
+  },
+};
 </script>
 
-
 <style lang="scss">
-
 @import "../style";
 
 .year {
   padding: 0;
   display: flex;
   margin-right: 8px;
-  font-size: 12px;
+  font-size: 2em;
   width: 25px;
-
-  @include lgDown {
-    font-size: 1.5em;
+  margin-bottom: 4px;
+  @include sm {
     width: auto;
     margin-top: 4px;
+  }
+  @include md {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
 .issues-list {
   display: flex;
   flex-wrap: wrap;
+
+  @include md {
+    flex-wrap: nowrap;
+  }
+}
+
+.rows {
+  & > div:last-of-type {
+    .year {
+      flex: 1;
+    }
+
+    .issues-list {
+      @include md {
+        margin-right: $issueWidthMd + 2;
+      }
+      @include lg {
+        margin-right: $issueWidthLg + 2;
+      }
+    }
+  }
 }
 
 .chart-row {
   display: flex;
-  @include lgDown {
-    margin-top: 16px;
-  }
-  @include smDown {
-    flex-direction: column;
-    .year {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  width: 100%;
+  margin-top: 8px;
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0;
   }
 
   &:hover {

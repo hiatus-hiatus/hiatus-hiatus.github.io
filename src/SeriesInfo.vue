@@ -2,10 +2,10 @@
   <div class="section">
     <div class="section-title main" @click="showArcs = !showArcs">
       {{ seriesInfo.name }} Hiatus Chart
-      <button class="fab">Arcs</button>
     </div>
-    <main-chart :issues-by-year="issuesByYear" />
-    <arcs-info :arcs="arcs" />
+    <button class="fab" @click="showArcs = !showArcs">Arcs</button>
+    <main-chart :issues-by-year="issuesByYear" v-if="!loading" />
+    <arcs-info :arcs="arcs" v-if="!loading" />
   </div>
   <article class="section" v-if="seriesInfo.showFaq && !loading">
     <div class="section-title">Frequently Asked Questions</div>
@@ -38,10 +38,12 @@ import TrendByYear from "./components/TrendByYear.vue";
 import { useRoute } from "vue-router";
 import RelatedLinks from "./components/RelatedLinks.vue";
 import Disqus from "./plugins/disqus/Disqus.vue";
+import LoadingIndicator from "./components/LoadingIndicator.vue";
 
 export default defineComponent({
   name: "SeriesInfo",
   components: {
+    LoadingIndicator,
     Disqus,
     RelatedLinks,
     TrendByYear,
@@ -118,6 +120,10 @@ export default defineComponent({
         const issues = group.get(issue.year) || [];
         issues.push(issue);
         group.set(issue.year, issues);
+      }
+
+      for (const issues of group.values()) {
+        issues.reverse();
       }
 
       return group;
