@@ -1,7 +1,9 @@
+import VueGtag from "vue-gtag";
 import { createApp } from "vue";
+import router from "./router";
 import App from "./App.vue";
 import "./style.scss";
-import router from "./router";
+import Disqus from "./plugins/disqus";
 
 import {
   BarController,
@@ -22,4 +24,15 @@ Chart.register(
   Tooltip
 );
 
-createApp(App).use(router).mount("#app");
+createApp(App)
+  .use(router)
+  .use(Disqus, { shortName: import.meta.env.VITE_DISQUS_SHORT_NAME }, router)
+  .use(
+    VueGtag,
+    {
+      config: { id: import.meta.env.VITE_DISQUS_SHORT_NAME },
+      bootstrap: !!import.meta.env.VITE_GANALYTICS_ID,
+    },
+    router
+  )
+  .mount("#app");

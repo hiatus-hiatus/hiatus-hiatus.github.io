@@ -13,11 +13,12 @@
   </article>
   <major-streaks
     :issues="issues"
-    v-if="issues.length > 0"
+    v-if="!loading"
     :threshold="seriesInfo.streaksThreshold"
   />
   <related-links />
   <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
+  <disqus />
   <attribution :series-info="seriesInfo" v-if="!loading" />
 </template>
 
@@ -36,10 +37,12 @@ import MainChart from "./components/MainChart.vue";
 import TrendByYear from "./components/TrendByYear.vue";
 import { useRoute } from "vue-router";
 import RelatedLinks from "./components/RelatedLinks.vue";
+import Disqus from "./plugins/disqus/Disqus.vue";
 
 export default defineComponent({
   name: "SeriesInfo",
   components: {
+    Disqus,
     RelatedLinks,
     TrendByYear,
     MainChart,

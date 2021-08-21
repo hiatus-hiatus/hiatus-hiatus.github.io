@@ -7,9 +7,9 @@
     <section>
       <h1>How long has it been since the last chapter?</h1>
       {{ diff.totalDays }}
-      <template v-if="diff.totalDays === 1000">days 🎉</template>
-      <template v-else>days</template>
-      . Aproximately
+      <template v-if="diff.totalDays === 1000">days 🎉.</template>
+      <template v-else>days.</template>
+      Aproximately
       <template v-if="diff.years > 0">
         {{ diff.years }}
         <template v-if="diff.years > 1">years</template>

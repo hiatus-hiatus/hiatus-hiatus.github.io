@@ -14,7 +14,6 @@ export default defineConfig(({ mode }) => {
   }
   return {
     plugins: [vue()],
-    base: "/chart-tests",
     build: {
       rollupOptions: {},
     },
