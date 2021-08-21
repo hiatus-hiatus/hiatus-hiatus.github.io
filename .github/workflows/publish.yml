@@ -2,9 +2,10 @@ name: Publish build
 on:
   push:
     branches:
-      - v3
+      - master
 jobs:
-  Publish:
+  publish:
+    environment: build
     runs-on: ubuntu-latest
     steps:
       - name: checkout pages branch
@@ -15,10 +16,10 @@ jobs:
       - name: delete current files
         run: |
           rm -rf *
-      - name: checkout v3 branch
+      - name: checkout master branch
         uses: actions/checkout@v2
         with:
-          ref: v3
+          ref: master
           path: temp
           persist-credentials: false
       - uses: actions/setup-node@v2
@@ -27,6 +28,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: temp/package-lock.json
       - name: install && build
+        env:
+          VITE_GANALYTICS_ID: ${{secrets.VITE_GANALYTICS_ID}}
+          VITE_DISQUS_SHORT_NAME: ${{secrets.VITE_DISQUS_SHORT_NAME}}
         run: |
           cd temp
           npm install

@@ -2,6 +2,7 @@
   <div
     class="issue"
     :class="{ released: issue.released && !showArcs, [color]: showArcs }"
+    :title="title"
   />
 </template>
 
@@ -20,6 +21,15 @@ export default defineComponent({
     const arcs = inject("arcs", new Map<string, ArcInfo>());
     const showArcs: Ref<Boolean> = inject("showArcs", false);
 
+    const title = computed(() => {
+      let text = "";
+      if (props.issue.chapter) {
+        text += `Chapter: ${props.issue.chapter}. `;
+      }
+      text += `Issue: ${props.issue.number}`;
+
+      return text;
+    });
     const color = computed(() => {
       if (showArcs.value) {
         const arc = arcs.value.get(props.issue.arc) || {};
@@ -29,6 +39,7 @@ export default defineComponent({
       }
     });
     return {
+      title,
       showArcs,
       arcs,
       color,
@@ -39,6 +50,12 @@ export default defineComponent({
 
 <style lang="scss">
 @import "../style";
+@import "../colors";
+
+.loading .issue {
+  background-color: $gray300;
+  animation: loadingBg 400ms infinite linear alternate;
+}
 
 .issue {
   width: $issueWidthMd + 4px;

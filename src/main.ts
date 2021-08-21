@@ -30,7 +30,7 @@ createApp(App)
   .use(
     VueGtag,
     {
-      config: { id: import.meta.env.VITE_DISQUS_SHORT_NAME },
+      config: { id: import.meta.env.VITE_GANALYTICS_ID },
       bootstrap: !!import.meta.env.VITE_GANALYTICS_ID,
     },
     router

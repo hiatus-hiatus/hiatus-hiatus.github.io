@@ -1,6 +1,6 @@
 <template>
   <div class="rows">
-    <div class="chart-row" v-for="[year, issues] in issuesByYear">
+    <div class="chart-row" v-for="[year, issues] in issues">
       <div class="year">
         {{ year }}
       </div>
@@ -20,6 +20,28 @@ export default {
   props: {
     issuesByYear: {
       type: Object as PropType<Map<number, IssueInfo[]>>,
+      required: true,
+    },
+    loading: {
+      type: Boolean as PropType<boolean>,
+      required: false,
+    },
+  },
+  computed: {
+    issues(): Map<number, IssueInfo[]> {
+      if (this.loading) {
+        const group = new Map();
+        for (const year in [...Array(23).keys()]) {
+          const issues = [] as IssueInfo[];
+          group.set(year, issues);
+          for (const number of [...Array(48).keys()]) {
+            issues.push({ year, number });
+          }
+        }
+        return group;
+      } else {
+        return this.issuesByYear;
+      }
     },
   },
 };
@@ -27,6 +49,12 @@ export default {
 
 <style lang="scss">
 @import "../style";
+
+.loading .year {
+  animation: loadingBg 400ms infinite linear alternate;
+  color: transparent;
+  max-width: 15%;
+}
 
 .year {
   padding: 0;

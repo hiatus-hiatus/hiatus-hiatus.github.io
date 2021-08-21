@@ -1,30 +1,33 @@
 <template>
-  <div class="section">
-    <div class="section-title main" @click="showArcs = !showArcs">
-      {{ seriesInfo.name }} Hiatus Chart
+  <div :class="{ loading: loading }">
+    <div class="section">
+      <div class="section-title main" @click="showArcs = !showArcs">
+        {{ seriesInfo.name }} Hiatus Chart
+      </div>
+      <button class="fab" @click="showArcs = !showArcs" v-show="!loading">
+        Arcs
+      </button>
+      <main-chart :issues-by-year="issuesByYear" :loading="loading" />
+      <arcs-info :arcs="arcs" v-if="!loading" />
     </div>
-    <button class="fab" @click="showArcs = !showArcs">Arcs</button>
-    <main-chart :issues-by-year="issuesByYear" v-if="!loading" />
-    <arcs-info :arcs="arcs" v-if="!loading" />
+    <article class="section" v-if="seriesInfo.showFaq && !loading">
+      <div class="section-title">Frequently Asked Questions</div>
+      <faq :items="seriesInfo.faq" :latest-release="latestRelease" />
+    </article>
+    <major-streaks
+      :issues="issues"
+      v-if="!loading"
+      :threshold="seriesInfo.streaksThreshold"
+    />
+    <related-links />
+    <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
+    <disqus />
+    <attribution :series-info="seriesInfo" v-if="!loading" />
   </div>
-  <article class="section" v-if="seriesInfo.showFaq && !loading">
-    <div class="section-title">Frequently Asked Questions</div>
-    <faq :items="seriesInfo.faq" :latest-release="latestRelease" />
-  </article>
-  <major-streaks
-    :issues="issues"
-    v-if="!loading"
-    :threshold="seriesInfo.streaksThreshold"
-  />
-  <related-links />
-  <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
-  <disqus />
-  <attribution :series-info="seriesInfo" v-if="!loading" />
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, provide, ref } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import Issue from "./components/IssueBlock.vue";
 import ArcsInfo from "./ArcsInfo.vue";
 
@@ -38,12 +41,10 @@ import TrendByYear from "./components/TrendByYear.vue";
 import { useRoute } from "vue-router";
 import RelatedLinks from "./components/RelatedLinks.vue";
 import Disqus from "./plugins/disqus/Disqus.vue";
-import LoadingIndicator from "./components/LoadingIndicator.vue";
 
 export default defineComponent({
   name: "SeriesInfo",
   components: {
-    LoadingIndicator,
     Disqus,
     RelatedLinks,
     TrendByYear,
@@ -53,7 +54,6 @@ export default defineComponent({
     Attribution,
     ArcsInfo,
     Issue,
-    HelloWorld,
   },
 
   setup() {

@@ -1,14 +1,14 @@
 $releaseColor: #33B5E5;
 $hiatusColor: #ff4444;
 $boxShadowColor: rgba(170, 170, 170, 0.67);
-
+$gray300: #E0E0E0;
 
 .indigo-500 {
   background-color: #3F51B5;
 }
 
 .gray-300 {
-  background-color: #E0E0E0;
+  background-color: $gray300;
 }
 
 .teal-500 {
