@@ -1,0 +1,44 @@
+{
+  "series_name": "Yu Yu Hakusho",
+  "ongoing": false,
+  "streaks_threshold": 1,
+  "attribution": {
+    "sources": [
+      {
+        "name": "hunter.noihjp.com",
+        "link": "https://hunter.noihjp.com/rest/"
+      },
+      {
+        "name": "Comic Vine",
+        "link": "https://comicvine.gamespot.com/"
+      }
+    ]
+  },
+  "arcs": [
+    {
+      "key": "hiatus-arc",
+      "name": "Hiatus",
+      "color": "gray-300"
+    },
+    {
+      "key": "spirit-detective",
+      "color": "indigo-500",
+      "name": "Spirit Detective Saga"
+    },
+    {
+      "key": "dark-tournament",
+      "color": "amber-500",
+      "name": "Dark Tournament Saga"
+    },
+    {
+      "key": "chapter-black",
+      "color": "teal-500",
+      "name": "Chapter Black Saga"
+    },
+    {
+      "key": "kings",
+      "color": "pink-500",
+      "name": "Three Kings Saga"
+    }
+  ]
+}

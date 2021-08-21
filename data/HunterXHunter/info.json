@@ -1,0 +1,77 @@
+{
+  "series_name": "HUNTER×HUNTER",
+  "ongoing": true,
+  "streaks_threshold": 10,
+  "attribution": {
+    "sources": [
+      {
+        "name": "hunter.noihjp.com",
+        "link": "https://hunter.noihjp.com/rest/"
+      },
+      {
+        "name": "Comic Vine",
+        "link": "https://comicvine.gamespot.com/"
+      }
+    ]
+  },
+  "arcs": [
+    {
+      "key": "hiatus-arc",
+      "color": "gray-300",
+      "name": "Great Hiatus Arc"
+    },
+    {
+      "key": "hunter-exam",
+      "color": "indigo-500",
+      "name": "Hunter Exam"
+    },
+    {
+      "key": "zoldyck",
+      "color": "teal-500",
+      "name": "Zoldyck Family"
+    },
+    {
+      "key": "heavens-arena",
+      "color": "amber-500",
+      "name": "Heavens Arena"
+    },
+    {
+      "key": "yorknew",
+      "color": "green-500",
+      "name": "Yorknew City"
+    },
+    {
+      "key": "greed-island",
+      "color": "deep-orange-500",
+      "name": "Greed Island"
+    },
+    {
+      "key": "chimera-ant",
+      "color": "purple-500",
+      "name": "Chimera Ant"
+    },
+    {
+      "key": "election",
+      "color": "pink-500",
+      "name": "13th Hunter Chairman Election"
+    },
+    {
+      "key": "dc",
+      "color": "blue-gray-500",
+      "name": "Dark Continent Expedition"
+    },
+    {
+      "key": "succ-war",
+      "color": "lime-500",
+      "name": "Succession Contest"
+    },
+    {
+      "key": "oneshot",
+      "color": "red-500",
+      "name": "Kurapika's One Shot"
+    }
+  ],
+  "show_faq": true,
+  "faq": [
+  ]
+}
