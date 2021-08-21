@@ -1,0 +1,50 @@
+name: Publish build
+on:
+  push:
+    branches:
+      - v3
+jobs:
+  Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout pages branch
+        uses: actions/checkout@v2
+        with:
+          ref: pages
+          persist-credentials: false
+      - name: delete current files
+        run: |
+          rm -rf *
+      - name: checkout v3 branch
+        uses: actions/checkout@v2
+        with:
+          ref: v3
+          path: temp
+          persist-credentials: false
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+          cache-dependency-path: temp/package-lock.json
+      - name: install && build
+        run: |
+          cd temp
+          npm install
+          npm run build
+
+      - name: move files
+        run: |
+          mv temp/dist/* ./
+          rm -rf temp
+      - name: commit
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "github-actions"
+          git add .
+          git commit -m "Release build"
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          branch: pages
