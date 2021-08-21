@@ -21,6 +21,11 @@ const routes = [
     },
     component: SeriesInfo,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "404",
+    redirect: { name: "hxh" },
+  },
 ];
 
 const router = createRouter({
