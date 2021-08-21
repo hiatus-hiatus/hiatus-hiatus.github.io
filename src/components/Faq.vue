@@ -2,13 +2,13 @@
   <div style="text-align: left">
     <section>
       <h1>When was the last chapter released?</h1>
-      Last chapter was released on
-      {{ formattedDate }}.
+      Chapter {{ latestRelease.chapter }} was released on {{ formattedDate }}.
     </section>
     <section>
       <h1>How long has it been since the last chapter?</h1>
-      {{ diff.totalDays }} days
-      <template v-if="diff.totalDays === 1000">🎉</template>
+      {{ diff.totalDays }}
+      <template v-if="diff.totalDays === 1000">days 🎉</template>
+      <template v-else>days</template>
       . Aproximately
       <template v-if="diff.years > 0">
         {{ diff.years }}
@@ -33,7 +33,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Prop, PropType } from "vue";
+import { defineComponent, PropType } from "vue";
+
+import { DateTime } from "luxon";
 
 export default defineComponent({
   name: "Faq",
@@ -43,35 +45,33 @@ export default defineComponent({
       required: true,
     },
     latestRelease: {
-      type: Object as Prop<IssueInfo>,
+      type: Object as PropType<IssueInfo>,
+      required: true,
     },
   },
   computed: {
-    latestIssueDate() {
-      const year = parseInt(this.latestRelease.date.slice(0, 4));
-      const month = parseInt(this.latestRelease.date.slice(5, 7)) - 1;
-      const day = parseInt(this.latestRelease.date.slice(8, 10));
-
-      return new Date(year, month, day);
+    latestIssueDate(): DateTime {
+      return DateTime.fromISO(this.latestRelease.date!, {
+        zone: "Asia/Tokyo",
+      });
     },
 
     formattedDate() {
-      return this.latestIssueDate.toLocaleString("en", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
+      return this.latestIssueDate.toLocaleString(DateTime.DATE_FULL, {
+        locale: "en",
       });
     },
     diff() {
-      // todo: rounding errors
-      const start = new Date(new Date().toDateString());
-      const diff = start.valueOf() - this.latestIssueDate.valueOf();
-      let totalDays = diff / 1000 / 60 / 60 / 24;
+      const now = DateTime.now();
+      let diff = now.diff(this.latestIssueDate, ["years", "months", "days"]);
+      let total = now.diff(this.latestIssueDate, ["days"]);
 
-      let years = Math.floor(totalDays / 365.25);
-      let months = Math.floor((totalDays % 365.25) / 30.42);
-
-      return { totalDays, years, months };
+      return {
+        years: diff.years,
+        months: diff.months,
+        days: diff.days,
+        totalDays: Math.floor(total.days),
+      };
     },
   },
 });

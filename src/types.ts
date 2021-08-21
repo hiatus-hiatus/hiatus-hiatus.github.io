@@ -1,6 +1,8 @@
 type IssueInfo = {
   year: number;
   number: number;
+  chapter?: string | number;
+  date?: string;
   released: boolean;
   arc?: string;
 };
@@ -18,7 +20,6 @@ type SeriesInfo = {
   streaksThreshold: number;
   showFaq: boolean;
   faq?: FaqItem[];
-  date?: string | Date;
   attribution?: AttributionInfo;
 };
 
