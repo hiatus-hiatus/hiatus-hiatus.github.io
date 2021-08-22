@@ -2,7 +2,7 @@
   <div :class="{ loading: loading }">
     <div class="section">
       <div class="section-title main" @click="showArcs = !showArcs">
-        {{ seriesInfo.name }} Hiatus Chart
+        {{ $route.meta.title }} Hiatus Chart
       </div>
       <button class="fab" @click="showArcs = !showArcs" v-show="!loading">
         Arcs
@@ -19,8 +19,8 @@
       v-if="!loading"
       :threshold="seriesInfo.streaksThreshold"
     />
-    <related-links />
     <trend-by-year :issues-by-year="issuesByYear" v-if="!loading" />
+    <related-links />
     <disqus />
     <attribution :series-info="seriesInfo" v-if="!loading" />
   </div>

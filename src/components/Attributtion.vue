@@ -34,7 +34,7 @@
     </p>
 
     <template v-if="sources">
-      <p>With partial or complete data from:</p>
+      references:
       <template v-for="(source, i) in sources">
         <template v-if="sources.length > 1 && i > 0">
           <template v-if="i === source.length - 1 || sources.length === 2">

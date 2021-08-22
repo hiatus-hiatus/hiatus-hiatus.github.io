@@ -12,9 +12,9 @@
 </template>
 <script lang="ts">
 import Issue from "./IssueBlock.vue";
-import { PropType } from "vue";
+import { defineComponent, PropType } from "vue";
 
-export default {
+export default defineComponent({
   name: "MainChart",
   components: { Issue },
   props: {
@@ -44,7 +44,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style lang="scss">

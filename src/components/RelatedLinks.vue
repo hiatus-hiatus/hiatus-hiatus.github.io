@@ -3,8 +3,8 @@
     <div class="section-title">Other charts</div>
 
     <div class="links">
-      <router-link v-for="chart in charts" :to="{ name: chart.name }">
-        {{ chart.description }}
+      <router-link v-for="route in routes" :to="{ name: route.name }">
+        {{ route.meta.title }}
       </router-link>
     </div>
   </div>
@@ -12,29 +12,24 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 export default defineComponent({
   name: "RelatedLinks",
 
   setup() {
     const route = useRoute();
-    const allCharts = [
-      {
-        name: "hxh",
-        description: "HunterXHunter",
-      },
-      {
-        name: "yuyu",
-        description: "YuYuHakusho",
-      },
-    ];
-    const charts = computed(() => {
-      return allCharts.filter((chart) => chart.name != route.name);
+    const router = useRouter();
+
+    const routes = computed(() => {
+      return router
+        .getRoutes()
+        .filter((r) => !!r.meta.dir)
+        .filter((r) => r.name != route.name);
     });
 
     return {
-      charts,
+      routes,
     };
   },
 });

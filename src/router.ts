@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import SeriesInfo from "./SeriesInfo.vue";
 import { nextTick } from "vue";
 
@@ -13,7 +13,7 @@ const routes = [
     },
   },
   {
-    path: "/YuYuHakusho",
+    path: "/YuYuHakusho/",
     name: "yuyu",
     meta: {
       dir: "YuYuHakusho",
@@ -29,7 +29,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
@@ -39,4 +39,5 @@ router.beforeEach(async (to) => {
     document.title = `${to.meta.title} ${suffix}`;
   });
 });
+
 export default router;
