@@ -1,7 +1,11 @@
 <template>
   <div
     class="issue"
-    :class="{ released: issue.released && !showArcs, [color]: showArcs }"
+    :class="{
+      released: issue.released && !showArcs,
+      hiatus: !issue.released && !showArcs,
+      [color]: showArcs,
+    }"
     :title="title"
   />
 </template>
@@ -53,17 +57,25 @@ export default defineComponent({
 @import "../colors";
 
 .loading .issue {
-  background-color: $gray300;
+  background-color: var(--gray-300);
   animation: loadingBg 400ms infinite linear alternate;
 }
 
 .issue {
   width: $issueWidthMd + 4px;
   height: 16px;
-  background: $hiatusColor;
+  background: var(--default-issue-color);
   margin-right: 1px;
   margin-left: 1px;
   margin-bottom: 2px;
+
+  &.hiatus {
+    background-color: var(--hiatus-color);
+  }
+
+  &.released {
+    background-color: var(--release-color);
+  }
 
   @include md {
     width: $issueWidthMd;
@@ -72,10 +84,6 @@ export default defineComponent({
   @include lg {
     width: $issueWidthLg;
     height: 17px;
-  }
-
-  &.released {
-    background: $releaseColor;
   }
 }
 </style>

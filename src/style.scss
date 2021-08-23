@@ -1,3 +1,4 @@
+@import "style/themes/default";
 @import "colors";
 
 $issueWidthMd: 17px;
@@ -27,29 +28,28 @@ $issueWidthLg: 22px;
   }
 }
 
-
 body {
-  background-color: #eeeeee;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-color: var(--body-bg-color);
   margin: 0;
   justify-content: center;
   display: flex;
   padding-bottom: 32px;
-}
-
-
-#app {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   padding-top: 8px;
-
+  height: 100%;
+  color: var(--text-color);
   @include md {
     padding-top: 32px;
   }
 }
 
+
 .section {
-  background-color: white;
+  background-color: var(--section-);
 
   overflow: hidden;
 
@@ -58,7 +58,7 @@ body {
 
   padding: 8px;
 
-  box-shadow: 2px 2px 2px 2px $boxShadowColor;
+  box-shadow: 2px 2px 2px 2px var(--box-shadow-color);
   margin-bottom: 32px;
 
   @include sm {
@@ -73,7 +73,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border-bottom: solid 1px #eee;
+  border-bottom: solid 1px var(--title-divider-color);
 
   &:not(.main) {
     margin-bottom: 16px;
@@ -105,7 +105,7 @@ body {
   color: white;
   font-weight: bold;
   text-transform: uppercase;
-  box-shadow: 2px 2px #eeeeeeaa;
+  box-shadow: 2px 2px var(--box-shadow-color);
   border: none;
 
 }
@@ -147,7 +147,7 @@ footer {
   &:active {
     .material-icons {
 
-      background-color: #ddd;
+      background-color: var(--icon-color);
       transition: 300ms;
     }
   }
@@ -155,11 +155,11 @@ footer {
 
 @keyframes loadingBg {
   from {
-    background-color: $gray300;
+    background-color: var(--default-issue-color);
   }
 
   to {
-    background-color: darken($gray300, 10%);
+    background-color: var(--default-issue-color-darken);
   }
 }
 

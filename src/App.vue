@@ -1,5 +1,7 @@
 <template>
-  <router-view :key="$route.path" />
+  <div class="app">
+    <router-view :key="$route.path" />
+  </div>
 </template>
 
 <script lang="ts">

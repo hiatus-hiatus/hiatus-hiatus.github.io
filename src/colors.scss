@@ -1,56 +1,45 @@
-$releaseColor: #33B5E5;
-$hiatusColor: #ff4444;
-$boxShadowColor: rgba(170, 170, 170, 0.67);
-$gray300: #E0E0E0;
 
 .indigo-500 {
-  background-color: #3F51B5;
+  background-color: var(--indigo-500);
 }
 
 .gray-300 {
-  background-color: $gray300;
+  background-color: var(--gray-300);
 }
 
 .teal-500 {
-  background-color: #009688;
+  background-color: var(--teal-500);
 }
 
 .amber-500 {
-  background-color: #FFC107;
+  background-color: var(--amber-500);
 }
 
 .green-500 {
-  background-color: #4CAF50;
+  background-color: var(--green-500);
 }
 
 .purple-500 {
-  background-color: #9C27B0;
+  background-color: var(--purple-500);
 }
 
 .blue-gray-500 {
-  background-color: #607D8B;
+  background-color: var(--blue-gray-500);
 }
 
 .red-500 {
-  background-color: #F44336;
+  background-color: var(--red-500);
 }
 
 .lime-500 {
-  background-color: #CDDC39;
+  background-color: var(--lime-500);
 }
 
 .pink-500 {
-  background-color: #E91E63;
+  background-color: var(--pink-500);
 }
 
 .deep-orange-500 {
-  background-color: #FF5722;
+  background-color: var(--deep-orange-500);
 }
 
-.hiatus {
-  background-color: $hiatusColor;
-}
-
-.released {
-  background-color: $releaseColor;
-}
