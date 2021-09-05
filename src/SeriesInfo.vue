@@ -10,7 +10,7 @@
       <main-chart :issues-by-year="issuesByYear" :loading="loading" />
       <arcs-info :arcs="arcs" v-if="!loading" />
     </div>
-    <article class="section" v-if="seriesInfo.showFaq && !loading">
+    <article class="section align-start" v-if="seriesInfo.showFaq && !loading">
       <div class="section-title">Frequently Asked Questions</div>
       <faq :items="seriesInfo.faq" :latest-release="latestRelease" />
     </article>

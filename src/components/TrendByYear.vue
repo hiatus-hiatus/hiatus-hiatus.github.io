@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="section-title">Trend</div>
-    <div>
+    <div class="chart">
       <canvas ref="canvas" height="256"></canvas>
     </div>
   </div>
@@ -54,6 +54,7 @@ export default defineComponent({
         },
         options: {
           maintainAspectRatio: false,
+          responsive: true,
           plugins: {
             tooltip: {
               callbacks: {
@@ -87,3 +88,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped lang="scss">
+.section {
+  display: block;
+}
+</style>

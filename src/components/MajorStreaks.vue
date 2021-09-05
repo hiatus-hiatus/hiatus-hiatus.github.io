@@ -66,6 +66,16 @@
         </td>
       </tr>
     </table>
+    <div class="streak-legend">
+      <div class="streak-legend-item">
+        <div class="issue hiatus" />
+        Hiatus streaks
+      </div>
+      <div class="streak-legend-item">
+        <div class="issue released" />
+        Release streaks
+      </div>
+    </div>
   </div>
 </template>
 
@@ -97,6 +107,7 @@ export default defineComponent({
 
     const threshold = ref(props.threshold);
     const includeReleases = ref(false);
+
     const filteredStreaks = computed(() => {
       return streaks.value
         .filter((streak) => streak.count >= threshold.value)
@@ -122,6 +133,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "./src/style";
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -151,10 +164,38 @@ table {
   padding-right: 8px;
   min-width: 20px !important;
   border-radius: 4px;
+
+  &.released {
+    background-color: var(--release-color);
+  }
+
+  &.hiatus {
+    background-color: var(--hiatus-color);
+  }
 }
 
 .streak-col {
   width: 50%;
+}
+
+.streak-legend {
+  min-width: 100%;
+  margin-top: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  @include md {
+    min-width: 30%;
+  }
+}
+
+.streak-legend-item {
+  display: flex;
+
+  .issue {
+    margin-right: 4px;
+  }
 }
 
 .filter-threshold {

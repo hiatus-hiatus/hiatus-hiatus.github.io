@@ -23,14 +23,12 @@ export default {
 @import "style";
 
 .arcs {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 32px;
-  max-width: 500px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  max-width: 600px;
 }
 
 .arc-description {
@@ -42,6 +40,7 @@ export default {
   display: flex;
   flex: auto;
   width: 100%;
+  min-width: 200px;
   @include md {
     width: 50%;
   }

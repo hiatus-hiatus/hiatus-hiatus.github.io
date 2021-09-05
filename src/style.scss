@@ -49,9 +49,11 @@ body {
 
 
 .section {
-  background-color: var(--section-);
+  background-color: var(--section-bg-color);
 
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   margin-left: 8px;
   margin-right: 8px;
@@ -61,15 +63,18 @@ body {
   box-shadow: 2px 2px 2px 2px var(--box-shadow-color);
   margin-bottom: 32px;
 
+  &.align-start {
+    align-items: start;
+  }
+
   @include sm {
     padding: 16px;
   }
 }
 
 .section-title {
-
-  font-size: 1.5em;
   text-align: center;
+  font-size: 1.5em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -112,9 +117,7 @@ body {
 
 
 .fab {
-  display: block;
-  float: right;
-  align-self: end;
+  align-self: flex-end;
   transition: 400ms opacity;
   border-radius: 50%;
   padding: 20px;
