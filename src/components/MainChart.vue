@@ -1,5 +1,5 @@
 <template>
-  <div class="rows">
+  <div class="rows" :class="afclass">
     <div class="chart-row" v-for="[year, issues] in issues">
       <div class="year">
         {{ year }}
@@ -43,6 +43,18 @@ export default defineComponent({
         return this.issuesByYear;
       }
     },
+    afclass() {
+      let now = new Date();
+
+      let day = now.getDate();
+      let month = now.getUTCMonth();
+
+      if (day == 1 && month == 3) {
+        return ["flip"];
+      } else {
+        return [];
+      }
+    },
   },
 });
 </script>
@@ -54,6 +66,16 @@ export default defineComponent({
   animation: loadingBg 400ms infinite linear alternate;
   color: transparent;
   max-width: 15%;
+}
+
+@keyframes flip {
+  from,
+  80% {
+    transform: rotateZ(180deg) translate(0px);
+  }
+}
+.flip {
+  animation: flip 4s ease-out;
 }
 
 .year {
