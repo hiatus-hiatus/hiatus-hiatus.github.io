@@ -1,26 +1,30 @@
 <template>
   <div style="text-align: left">
     <section>
-      <h1>When was the last chapter released?</h1>
-      Chapter {{ latestRelease.chapter }} was released on {{ formattedDate }}.
+      <h1>When was the latest chapter released?</h1>
+      Chapter {{ latestRelease.chapter }} was officially released on
+      {{ formattedDate }} (JST).
     </section>
     <section>
-      <h1>How long has it been since the last chapter?</h1>
+      <h1>How long has it been?</h1>
       {{ diff.totalDays }}
-      <template v-if="diff.totalDays === 1000">days 🎉.</template>
+      <template v-if="diff.totalDays === 0">days 🎉</template>
+      <template v-else-if="diff.totalDays === 1">day.</template>
       <template v-else>days.</template>
-      Aproximately
-      <template v-if="diff.years > 0">
-        {{ diff.years }}
-        <template v-if="diff.years > 1">years</template>
-        <template v-else>year</template>
-      </template>
+      <template v-if="diff.totalDays > 100">
+        Aproximately
+        <template v-if="diff.years > 0">
+          {{ diff.years }}
+          <template v-if="diff.years > 1">years</template>
+          <template v-else>year</template>
+        </template>
 
-      <template v-if="diff.months > 0">
-        <template v-if="diff.years"> and</template>
-        {{ diff.months }}
-        <template v-if="diff.months > 1"> months.</template>
-        <template v-else> month.</template>
+        <template v-if="diff.months > 0">
+          <template v-if="diff.years"> and</template>
+          {{ diff.months }}
+          <template v-if="diff.months > 1"> months.</template>
+          <template v-else> month.</template>
+        </template>
       </template>
     </section>
     <section v-for="item in items">
@@ -70,7 +74,7 @@ export default defineComponent({
         years: diff.years,
         months: diff.months,
         days: diff.days,
-        totalDays: Math.floor(total.days),
+        totalDays: Math.max(Math.floor(total.days), 0),
       };
     },
   },
