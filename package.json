@@ -8,19 +8,19 @@
   },
   "dependencies": {
     "chart.js": "^3.5.1",
-    "luxon": "^2.0.2",
-    "vue": "^3.0.5",
+    "luxon": "^3.0.4",
+    "vue": "^3.2.41",
     "vue-gtag": "^2.0.1",
-    "vue-router": "^4.0.11"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@types/luxon": "^2.0.0",
-    "@types/node": "^16.7.1",
-    "@vitejs/plugin-vue": "^1.1.4",
-    "@vue/compiler-sfc": "^3.0.5",
-    "prettier": "^2.3.2",
-    "sass": "^1.38.0",
-    "typescript": "^4.1.3",
-    "vite": "^2.0.1"
+    "@types/luxon": "^3.0.1",
+    "@types/node": "^16.11.66",
+    "@vitejs/plugin-vue": "^1.10.2",
+    "@vue/compiler-sfc": "^3.2.41",
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
+    "vite": "^2.9.15"
   }
 }
