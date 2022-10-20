@@ -1,5 +1,11 @@
 <template>
   <div style="text-align: left">
+    <section v-for="item in items">
+      <h1>
+        {{ item.question }}
+      </h1>
+      <p>{{ item.answer }}</p>
+    </section>
     <section>
       <h1>When was the latest chapter released?</h1>
       Chapter {{ latestRelease.chapter }} was officially released on
@@ -26,12 +32,6 @@
           <template v-else> month.</template>
         </template>
       </template>
-    </section>
-    <section v-for="item in items">
-      <h1>
-        {{ item.question }}
-      </h1>
-      <p>{{ item.answer }}</p>
     </section>
   </div>
 </template>
