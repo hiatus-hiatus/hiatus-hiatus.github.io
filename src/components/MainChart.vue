@@ -97,7 +97,7 @@ export default defineComponent({
 
 .issues-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 
   @include md {
     flex-wrap: nowrap;
