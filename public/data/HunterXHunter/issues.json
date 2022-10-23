@@ -1,7 +1,15 @@
 [
   {
+    "number": 47,
     "year": 2022,
-    "number": 45,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 391,
+    "date": "2022-10-24"
+  },
+  {
+    "year": 2022,
+    "number": 46,
     "released": false
   },
   {
