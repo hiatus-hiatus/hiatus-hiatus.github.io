@@ -1,11 +1,15 @@
 <template>
   <div class="section">
-    <div class="section-title">Other charts</div>
+    <div class="section-title">Related links</div>
 
     <div class="links">
       <router-link v-for="route in routes" :to="{ name: route.name }">
-        {{ route.meta.title }}
+        {{ route.meta.title }} Hiatus Chart
       </router-link>
+      <a href="https://www.jajanken.net/en/" target="_blank">Janjanken.net</a>
+      <a href="https://www.reddit.com/r/HiatusCharts" target="_blank">
+        r/HiatusCharts
+      </a>
     </div>
   </div>
 </template>
@@ -38,25 +42,17 @@ export default defineComponent({
 <style scoped lang="scss">
 .links {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  justify-items: flex-start;
+  align-content: start;
+
   gap: 4px;
+  width: 100%;
 
   a {
-    background-color: #3f51b5;
-    color: white;
-    margin-right: 8px;
-    text-decoration: none;
-    border: solid 1px;
-    padding: 20px 0 !important;
-    border-radius: 4px;
-    width: 180px;
-    text-align: center;
-
-    &:hover {
-      border-color: #303d81;
-      background-color: #303d81;
-      color: white;
-    }
+    margin-top: 8px;
+    margin-right: 16px;
   }
 }
 </style>
