@@ -1,6 +1,14 @@
 [
   {
     "year": 2023,
+    "number": 3,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 399,
+    "date": "2022-12-19"
+  },
+  {
+    "year": 2023,
     "number": 2,
     "released": true,
     "arc": "succ-war",
