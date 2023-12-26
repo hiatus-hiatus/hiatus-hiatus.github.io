@@ -4,7 +4,7 @@
       <h1>
         {{ item.question }}
       </h1>
-      <p>{{ item.answer }}</p>
+      <p v-html="item.answer"></p>
     </section>
     <section>
       <h1>When was the latest chapter released?</h1>
