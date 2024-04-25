@@ -1,5 +1,321 @@
 [
   {
+    "year": 2024,
+    "number": 21,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 20,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 19,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 18,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 17,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 16,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 15,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 14,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 13,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 12,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 11,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 10,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 9,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 8,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 6,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 4,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 3,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 2,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 1,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 52,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 51,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 50,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 49,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 48,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 47,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 46,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 45,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 44,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 43,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 42,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 41,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 40,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 39,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 38,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 36,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 35,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 34,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 33,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 32,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 31,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 30,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 29,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 28,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 27,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 26,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 25,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 24,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 23,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 21,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 20,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 19,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 18,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 17,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 16,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 15,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 14,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 13,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 12,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 11,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 10,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 9,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 8,
+    "released": false
+  },
+  {
+    "year": 2023,
+    "number": 6,
+    "released": false,
+    "date": "2022-12-25"
+  },
+  {
     "year": 2023,
     "number": 4,
     "released": true,
