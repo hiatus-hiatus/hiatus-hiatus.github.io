@@ -73,8 +73,8 @@
   "show_faq": true,
   "faq": [
     {
-      "question": "Why isn't the chart being updated?",
-      "answer": "As of December 2022, <a target='_blank' href='https://twitter.com/TheHxHSource/status/1605431262285553664'>HxH is no longer a weekly series</a>. The chart will be updated to reflect the new format once it's announced."
+      "question": "What's the current serialization format?",
+      "answer": "As of December 2022, <a target='_blank' href='https://twitter.com/TheHxHSource/status/1605431262285553664'>HxH is officially no longer a weekly series</a>. <p>The chart will follow the WSJ schedule until a new format is announced.</p>"
     }
   ]
 }
