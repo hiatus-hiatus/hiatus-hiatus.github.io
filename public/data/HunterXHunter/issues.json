@@ -1,6 +1,111 @@
 [
   {
     "year": 2024,
+    "number": 44,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 43,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 42,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 41,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 40,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 39,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 38,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 36,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 35,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 34,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 33,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 32,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 31,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 30,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 29,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 28,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 27,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 26,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 25,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 24,
+    "released": false
+  },
+  {
+    "year": 2024,
+    "number": 22,
+    "released": false
+  },
+  {
+    "year": 2024,
     "number": 21,
     "released": false
   },
