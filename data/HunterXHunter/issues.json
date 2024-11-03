@@ -1,6 +1,14 @@
 [
   {
     "year": 2024,
+    "number": 49,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 405,
+    "date": "2024-11-04"
+  },
+  {
+    "year": 2024,
     "number": 48,
     "released": true,
     "arc": "succ-war",
