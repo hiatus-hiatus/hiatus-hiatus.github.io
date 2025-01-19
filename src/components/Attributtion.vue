@@ -11,7 +11,7 @@
       inspired by
       <a
         target="_blank"
-        href="https://hunterxhunter.fandom.com/wiki/User_blog:MrGenial11/Hunter_x_Hunter_Hiatus_Chart"
+        href="https://web.archive.org/web/20220525015435/https://hunterxhunter.fandom.com/wiki/User_blog:MrGenial11/Hunter_x_Hunter_Hiatus_Chart"
       >
         MrGenial11's
       </a>
