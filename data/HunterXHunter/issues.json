@@ -1,6 +1,111 @@
 [
   {
     "year": 2025,
+    "number": 41,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 40,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 39,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 38,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 36,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 35,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 34,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 33,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 32,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 31,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 30,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 29,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 28,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 27,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 26,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 25,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 24,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 22,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 21,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 20,
+    "released": false
+  },
+  {
+    "year": 2025,
+    "number": 19,
+    "released": false
+  },
+  {
+    "year": 2025,
     "number": 18,
     "released": false
   },
