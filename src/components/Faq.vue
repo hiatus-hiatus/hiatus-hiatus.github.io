@@ -1,18 +1,18 @@
 <template>
   <div style="text-align: left">
     <section v-for="item in items">
-      <h1>
+      <h2>
         {{ item.question }}
-      </h1>
+      </h2>
       <p v-html="item.answer"></p>
     </section>
     <section>
-      <h1>When was the latest chapter released?</h1>
+      <h2>When was the latest chapter released?</h2>
       Chapter {{ latestRelease.chapter }} was officially released on
       {{ formattedDate }} (JST).
     </section>
     <section>
-      <h1>How long has it been?</h1>
+      <h2>How long has it been?</h2>
       {{ diff.totalDays }}
       <template v-if="diff.totalDays === 0">days 🎉</template>
       <template v-else-if="diff.totalDays === 1">day.</template>
