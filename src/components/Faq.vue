@@ -18,7 +18,7 @@
       <template v-else-if="diff.totalDays === 1">day.</template>
       <template v-else>days.</template>
       <template v-if="diff.totalDays > 100">
-        Aproximately
+        Approximately
         <template v-if="diff.years > 0">
           {{ diff.years }}
           <template v-if="diff.years > 1">years</template>
