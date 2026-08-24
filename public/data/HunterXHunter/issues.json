@@ -1,7 +1,39 @@
 [
   {
     "year": 2026,
-    "number": 32,
+    "number": 39,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 418,
+    "date": "2026-08-24"
+  },
+  {
+    "year": 2026,
+    "number": 37,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 417,
+    "date": "2026-08-10"
+  },
+  {
+    "year": 2026,
+    "number": 36,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 416,
+    "date": "2026-08-03"
+  },
+  {
+    "year": 2026,
+    "number": 35,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 415,
+    "date": "2026-07-27"
+  },
+  {
+    "year": 2026,
+    "number": 34,
     "released": true,
     "arc": "succ-war",
     "chapter": 414,
@@ -9,7 +41,7 @@
   },
   {
     "year": 2026,
-    "number": 32,
+    "number": 33,
     "released": true,
     "arc": "succ-war",
     "chapter": 413,
