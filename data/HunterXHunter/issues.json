@@ -1,6 +1,22 @@
 [
   {
     "year": 2026,
+    "number": 40,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 420,
+    "date": "2026-09-07"
+  },
+  {
+    "year": 2026,
+    "number": 40,
+    "released": true,
+    "arc": "succ-war",
+    "chapter": 419,
+    "date": "2026-08-31"
+  },
+  {
+    "year": 2026,
     "number": 39,
     "released": true,
     "arc": "succ-war",
