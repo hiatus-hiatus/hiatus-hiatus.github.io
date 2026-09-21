@@ -1,6 +1,16 @@
 [
   {
     "year": 2026,
+    "number": 42,
+    "released": false
+  },
+  {
+    "year": 2026,
+    "number": 41,
+    "released": false
+  },
+  {
+    "year": 2026,
     "number": 40,
     "released": true,
     "arc": "succ-war",
